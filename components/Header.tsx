@@ -1,24 +1,40 @@
 import Link from 'next/link';
+import HamburgerMenu from './HamburgerMenu';
+import Navbar from './Navbar';
+import { useState } from 'react';
 
-const Layout: React.FunctionComponent = () => (
+
+const Layout: React.FunctionComponent = () => {
+    const [showNav, setShowNav] = useState(false)
+
+    return (
     <header>
-        <Link href={'/'}>  
-            <a>TextGuiden</a>
+        <Link href='/'>  
+            <a className='logo'><img src='/static/favicon.png'/></a>
         </Link>
 
+        <div onClick={() => setShowNav(!showNav)}>
+            <HamburgerMenu isClicked={showNav}/>
+        </div>
+
+        <Navbar visible={showNav}/>
+
+
         <style jsx>{`
+
             header {
                 display: flex;
                 flex-wrap: wrap;
                 width: 100%;
-                height: 100px;
+
                 text-align: center;
-                background: white;
+                background: #15C39A;
             }
 
-            a {
+            .logo {
                 margin: auto;
-                color: #15C39A;
+                color: white;
+                width: 100%;
                 text-decoration: none;
                 font-family: 'Montserrat', sans-serif;
                 font-weight: 700;
@@ -26,6 +42,7 @@ const Layout: React.FunctionComponent = () => (
             }
         `}</style>
  </header>
-)
+    )
+}
 
 export default Layout;

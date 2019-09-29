@@ -43,8 +43,17 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description }
         html, body {
             padding: 0;
             margin: 0;
-            background-image: linear-gradient(to top, #00bfa5, #00b7a3, #00b0a0, #00a89d, #00a19a);
-            background-size: cover;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        p {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            letter-spacing: 1.4px;
+            line-height: 1.78em;
         }
       `}</style>
   </div>

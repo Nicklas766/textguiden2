@@ -26,8 +26,6 @@ const FeaturedLink: React.FunctionComponent<Props> = ({ imgSrc, text, color, hre
                 }
 
                 h2 {
-                    font-family: 'Montserrat', sans-serif;
-                    font-weight: 400;
                     width: 100%;
                     text-align: center;
                 }

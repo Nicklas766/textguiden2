@@ -19,19 +19,8 @@ const About: NextPage = () => (
 
         <style jsx>{`
             h1 {
-                font-family: 'Montserrat',sans-serif;
                 text-align: center;
                 color: white;
-            }
-
-            p {
-                font-family: 'Open Sans', sans-serif;
-                color: white;
-                font-weight: 300;
-                letter-spacing: 1.4px;
-                line-height: 1.78em;
-                text-align: left;
-                padding: 20px 20px 0% 20px;
             }
     `}</style>
     </Layout>
