@@ -16,12 +16,17 @@ const Navbar: React.FunctionComponent<Props> = ({ visible }) => {
                 <a>Om oss</a>
             </Link>
 
+            <Link href='/hur-forkortas'>  
+                <a>Förkortningar</a>
+            </Link>
+
             <style jsx>{`
                 nav {
                     width: 100%;
                     transition: 0.2s;
                     background: #15C39A;
                     text-align: center;
+                    overflow: hidden;
                 }
 
                 .hide {
@@ -29,7 +34,7 @@ const Navbar: React.FunctionComponent<Props> = ({ visible }) => {
                 }
 
                 .show {
-                    height 80px;
+                    height 120px;
                 }
 
                 nav a {

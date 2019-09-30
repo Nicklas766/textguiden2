@@ -56,7 +56,7 @@ const Home: NextPage = () => (
                       color='#43cfa8' />
 
         <FeaturedLink 
-                      href='' 
+                      href='/hur-forkortas' 
                       imgSrc='/static/loupe.png' 
                       text='Förkortningar' 
                       color='#00bbb4' />

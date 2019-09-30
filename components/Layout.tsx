@@ -47,6 +47,7 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description }
 
         h1, h2, h3 {
             font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
         }
 
         p {
