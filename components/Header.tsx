@@ -13,7 +13,7 @@ const Layout: React.FunctionComponent = () => {
             <a className='logo'><img src='/static/favicon.png'/></a>
         </Link>
 
-        <div onClick={() => setShowNav(!showNav)}>
+        <div className='hamburger' onClick={() => setShowNav(!showNav)}>
             <HamburgerMenu isClicked={showNav}/>
         </div>
 
@@ -26,19 +26,22 @@ const Layout: React.FunctionComponent = () => {
                 display: flex;
                 flex-wrap: wrap;
                 width: 100%;
-
-                text-align: center;
                 background: #15C39A;
             }
 
             .logo {
-                margin: auto;
-                color: white;
-                width: 100%;
-                text-decoration: none;
-                font-family: 'Montserrat', sans-serif;
-                font-weight: 700;
-                font-size: 2em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 25%;
+            }
+
+            .hamburger {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                width: 70%;
+                margin-right: 5%;
             }
         `}</style>
  </header>

@@ -55,6 +55,10 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description }
             letter-spacing: 1.4px;
             line-height: 1.78em;
         }
+
+        a {
+            font-family: 'Montserrat', sans-serif;
+        }
       `}</style>
   </div>
 )

@@ -10,16 +10,15 @@ const HamburgerMenu: React.FunctionComponent<Props> = ({ isClicked }) => (
 
         <style jsx>{`
             .container {
-                display: inline-block;
                 cursor: pointer;
             }
             
             .bar1, .bar2, .bar3 {
                 width: 35px;
                 height: 5px;
-                background-color: #333;
+                background-color: white;
                 margin: 6px 0;
-                transition: 0.4s;
+                transition: 0.2s;
             }
             
             .change .bar1 {
