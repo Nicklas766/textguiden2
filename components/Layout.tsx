@@ -23,10 +23,7 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description }
         {children}
     </div>
 
-    <footer>
-        footer here
-    </footer>
-    
+
     <style jsx>{`
         .site-wrapper {
             display: flex;
@@ -48,6 +45,13 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description }
         h1, h2, h3 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 400;
+        }
+
+        li {
+            font-family: 'Open Sans', sans-serif;
+            margin-top: 5px;
+            font-weight: 300;
+            letter-spacing: 1.1px;
         }
 
         p {

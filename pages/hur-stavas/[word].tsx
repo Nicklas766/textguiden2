@@ -15,7 +15,7 @@ type Props = {
   }
 }
 
-const Post: NextPage<Props> = ({ error, data }) => {
+const SpellingError: NextPage<Props> = ({ error, data }) => {
 
   if (error) {
     return <ErrorPage statusCode={404} />
@@ -39,7 +39,7 @@ const Post: NextPage<Props> = ({ error, data }) => {
 
 };
 
-Post.getInitialProps = async function({ res, query }) {
+SpellingError.getInitialProps = async function({ res, query }) {
   const fetchRes = await fetch(`http://localhost:3001/spelling-error/${query.word}`);
   const data = await fetchRes.json();
   
@@ -54,4 +54,4 @@ Post.getInitialProps = async function({ res, query }) {
   };
 };
 
-export default Post;
+export default SpellingError;

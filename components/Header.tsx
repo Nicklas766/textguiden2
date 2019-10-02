@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 
 const Layout: React.FunctionComponent = () => {
-    const [showNav, setShowNav] = useState(false)
+    const [showNav, setShowNav] = useState(false);
 
     return (
     <header>

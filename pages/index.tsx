@@ -50,7 +50,7 @@ const Home: NextPage = () => (
                       color='#00a5b6' />
 
         <FeaturedLink 
-                      href='' 
+                      href='/ord' 
                       imgSrc='/static/open-book.png' 
                       text='Titta i vår ordbok' 
                       color='#43cfa8' />

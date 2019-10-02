@@ -1,28 +1,35 @@
 import { NextPage } from 'next';
 import Layout from '../components/Layout';
+import TextWrapper from '../components/TextWrapper';
 
 const About: NextPage = () => (
     <Layout title='TextGuiden - Om oss' description='En hemsida skapad av språkentusiaster och programmerare. Läs gärna mer om oss.'>
-        <h1>Om oss</h1>
+        <TextWrapper>
 
-        <p>
-            Vi vill hjälpa dig att skriva fina texter. Detta gör vi genom att ge dig information om hur ord kan stavas, användas eller förkortas.
-            Vi som driver denna hemsida är språkentusiaster och programmerare. Tillsammans så har vi slagit ihop våra kunskaper och erbjuder en ordbok. 
-            Mejladress för att kontakta oss kommer att dyka upp här inom kort.
-        </p>
+            <h1>Om oss</h1>
 
-         <p>
-             Vi skapar ett språkverktyg, under tiden så erbjuder vi en ordbok. Ordboken har vi byggt upp själva 
-             genom att studera det svenska språket. Alla namn som finns i ordboken är dock inhämtade från en källa som inte får anges eftersom datan har bearbetats.
-             Ordboken uppdateras ständigt och därav kan enstaka fel förekomma.
-        </p>
+            <p>
+                Vårt mål med denna hemsida är att göra det lättare att öva på svenska. Vi har skapat ett spel som man kan använda för att antingen
+                öva på svenska eller för att utmana sig själv. Om man fastnar så kan du söka efter orden för att få mer information om dem.
+            </p>
 
-        <style jsx>{`
-            h1 {
-                text-align: center;
-                color: white;
-            }
-    `}</style>
+            <p>
+                Datan till språkverktyget har vi byggt upp själva genom att studera det svenska språket. Alla namn som finns på hemsidan är dock 
+                inhämtade från en källa som inte får anges eftersom datan har bearbetats. Datan uppdateras ständigt och därav kan enstaka fel förekomma.
+            </p>
+
+                <style jsx>{`
+
+                    img {
+                        margin: auto;
+                        display: block;
+                    }
+                    h1 {
+                        border-bottom: 1px solid silver;
+                        text-align: center;
+                    }
+            `}</style>
+        </TextWrapper>
     </Layout>
 );
 

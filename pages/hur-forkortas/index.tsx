@@ -3,7 +3,7 @@ import Layout from '../../components/Layout';
 import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
 
-const LinkToAbbreviation: NextPage<{id: string}> = props => (
+const LinkToAbbreviation: React.FunctionComponent<{id: string}> = props => (
     <li>
       <Link href="/hur-forkortas/[abbreviation]" as={`/hur-forkortas/${props.id}`}>
         <a>{props.id}</a>
