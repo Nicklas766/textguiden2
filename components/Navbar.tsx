@@ -20,6 +20,10 @@ const Navbar: React.FunctionComponent<Props> = ({ visible }) => {
                 <a>Förkortningar</a>
             </Link>
 
+            <Link href='/ord'>  
+                <a>Slå upp ord</a>
+            </Link>
+
             <style jsx>{`
                 nav {
                     width: 100%;
@@ -34,7 +38,7 @@ const Navbar: React.FunctionComponent<Props> = ({ visible }) => {
                 }
 
                 .show {
-                    height 120px;
+                    height 160px;
                 }
 
                 nav a {

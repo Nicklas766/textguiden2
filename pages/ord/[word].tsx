@@ -1,30 +1,21 @@
 import { NextPage } from 'next';
 import Layout from '../../components/Layout';
+import TextWrapper from '../../components/TextWrapper';
 import fetch from 'isomorphic-unfetch';
 import ErrorPage from 'next/error';
 import Link from 'next/link';
-
-const capFirstChar = (str: string) => str ? str[0].toUpperCase() + str.slice(1) : '';
 
 type Props = {
   error: boolean,
   data: {
     word: string,
+    text: string,
+    details: [],
     forms: [],
-    pos: [],
-    posDetails: [],
-    specificDetails: []
   }
 }
 
 const ConditionalShowDiv: React.FunctionComponent<{visible: boolean}> = ({ visible, children }) => visible ? <div>{children}</div> : null;
-
-
-const UnorderedList: React.FunctionComponent<{list: []}> = ({ list }) => (
-  <div>
-    {list.map((info, index) => <li key={index}>{info}</li>)}
-  </div>
-)
 
 const WordInfo: NextPage<Props> = ({ error, data }) => {
 
@@ -33,58 +24,37 @@ const WordInfo: NextPage<Props> = ({ error, data }) => {
   }
 
   return (
-    <Layout title={``} 
-            description={``}>
-    <div>
-      <h1>{data.word}</h1>
-      <p>Ordet <i>{data.word}</i> har ordklassen: {data.pos.toString()}.</p>
-      <p>{data.posDetails.join(' ')}</p>
+    <Layout title={`${data.word} - hur används ${data.word}?`} description={`${data.word} är ...`}>
+      <TextWrapper>
+        <h1>{data.word}</h1>
+        <p>{data.text}</p>
 
-      <ConditionalShowDiv visible={data.specificDetails.length > 0}>
-          <h2>Mer om ordet <i>{data.word}</i>:</h2>
-          <UnorderedList list={data.specificDetails}/>
-      </ConditionalShowDiv>
-      
-      
-      <ConditionalShowDiv visible={data.forms.length > 1}>
+        <ConditionalShowDiv visible={data.details.length > 0}>
+          <h2>Mer om ordet <i>{data.word}</i></h2>
+          <ul>
+            {data.details.map((info, index) => <li key={index}>{info}</li>)}
+          </ul>
+        </ConditionalShowDiv>
+        
+        <ConditionalShowDiv visible={data.forms.length > 1}>
           <h2>Hur böjs <i>{data.word}</i>?</h2>
           <ul>
-            {data.forms.map(form => <li>
+            {data.forms.map(form => 
+            <li>
               <Link href="/ord/[word]" as={`/ord/${form}`}>
                 <a>{form}</a>
-                </Link>
-            
+              </Link>
             </li>)}
           </ul>
-      </ConditionalShowDiv>
+        </ConditionalShowDiv>
 
-
-
-            <style jsx>{`
-
-                h1 {
-                  border-bottom: solid 1.5px silver;
-                }
-
-                h2 {
-                  border-bottom: solid 1px silver;
-                }
-                div {
-
-                  width: 90%;
-                  margin: auto;
-
-    
- 
-                }
-
+        <style jsx>{`
+          h1 { border-bottom: solid 1.5px silver; }
+          h2 { border-bottom: solid 1px silver; }
         `}</style>
-    </div>
-
-
+      </TextWrapper>
     </Layout>
   )
-
 };
 
 WordInfo.getInitialProps = async function({ res, query }) {

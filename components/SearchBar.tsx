@@ -24,9 +24,8 @@ const SearchBar: React.FunctionComponent = () => {
                 color="default"
                 style={{background: '#15C39A', color: 'white', marginTop: '12px'}}
             >
-            <SearchIcon/>
-        </Button>
-
+                <SearchIcon/>
+            </Button>
         </div>
     )
 }

@@ -15,15 +15,15 @@ const HamburgerMenu: React.FunctionComponent<Props> = ({ isClicked }) => (
             
             .bar1, .bar2, .bar3 {
                 width: 35px;
-                height: 5px;
+                height: 4px;
                 background-color: white;
                 margin: 6px 0;
                 transition: 0.2s;
             }
             
             .change .bar1 {
-                -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-                transform: rotate(-45deg) translate(-9px, 6px);
+                -webkit-transform: rotate(-45deg) translate(-7px, 6px);
+                transform: rotate(-45deg) translate(-7px, 6px);
             }
             
             .change .bar2 {opacity: 0;}

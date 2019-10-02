@@ -3,7 +3,6 @@ import HamburgerMenu from './HamburgerMenu';
 import Navbar from './Navbar';
 import { useState } from 'react';
 
-
 const Layout: React.FunctionComponent = () => {
     const [showNav, setShowNav] = useState(false);
 
