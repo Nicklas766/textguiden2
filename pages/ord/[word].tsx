@@ -26,6 +26,7 @@ const WordInfo: NextPage<Props> = ({ error, data }) => {
   return (
     <Layout title={`${data.word} - hur används ${data.word}?`} description={`${data.word} är ...`}>
       <TextWrapper>
+        
         <h1>{data.word}</h1>
         <p>{data.text}</p>
 

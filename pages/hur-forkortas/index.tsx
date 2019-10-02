@@ -2,28 +2,32 @@ import { NextPage } from 'next';
 import Layout from '../../components/Layout';
 import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
+import TextWrapper from '../../components/TextWrapper';
 
-const LinkToAbbreviation: React.FunctionComponent<{id: string}> = props => (
+const LinkToAbbreviation: React.FunctionComponent<{slug: string, word: string}> = ({ slug, word }) => (
     <li>
-      <Link href="/hur-forkortas/[abbreviation]" as={`/hur-forkortas/${props.id}`}>
-        <a>{props.id}</a>
+      <Link href="/hur-forkortas/[abbreviation]" as={`/hur-forkortas/${slug}`}>
+        <a>{word}</a>
       </Link>
     </li>
 );
 
-const AbbreviationHome: NextPage<{ abbreviations: [] }> = ({ abbreviations }) => (
+
+const AbbreviationHome: NextPage<{ abbreviations: [{slug: string, word: string}] }> = ({ abbreviations }) => (
 
     <Layout title='Svenska förkortningar'
             description='I Sverige så har vi många förkortningar, här får du reda på många av dem.'>
 
-        <h1>Svenska förkortningar</h1>
-        <p>Hur förkortas egentligen svenska ord? Här har vi skapat en lista för att göra det enklare att hitta förkortningar.</p>
+        <TextWrapper>
+            <h1>Svenska förkortningar</h1>
+            <p>Hur förkortas egentligen svenska ord? Här har vi skapat en lista för att göra det enklare att hitta förkortningar.</p>
 
-        <h2>Lista över svenska förkortningar:</h2>
+            <h2>Lista över svenska förkortningar:</h2>
 
-        <ul>
-            {abbreviations.map(abbreviation => <LinkToAbbreviation key={abbreviation} id={abbreviation} />)}
-        </ul>
+            <ul>
+                {abbreviations.map(abbreviation => <LinkToAbbreviation key={abbreviation.slug} {... abbreviation} />)}
+            </ul>
+        </TextWrapper>
 
     </Layout>
 );
