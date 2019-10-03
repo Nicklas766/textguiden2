@@ -33,13 +33,31 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description }
 
         .content-wrapper {
             width: 100%;
+            background: white;
+            border-top-left-radius: 1em;
+            border-top-right-radius: 1em;
+            min-height: 1000px;
+        }
+
+        @media (min-width: 1000px) {
+            .content-wrapper {
+                width: 50%;
+                margin: auto;
+            }
         }
     `}</style>
 
     <style jsx global>{`
+        @media (max-width: 1000px) {
+            header a h1 {
+                display: none;
+            }
+        }
+            
         html, body {
             padding: 0;
             margin: 0;
+            background: #15C39A;
         }
 
         h1, h2, h3 {
@@ -54,7 +72,6 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description }
             letter-spacing: 1.1px;
         }
 
-    
         p {
             font-family: 'Open Sans', sans-serif;
             font-weight: 300;

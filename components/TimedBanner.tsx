@@ -65,7 +65,6 @@ const TimedBanner: React.FunctionComponent<Props> = ({ timer, buttonText, link, 
   }
 
   return null;
-  
 }
 
 export default TimedBanner;

@@ -31,6 +31,8 @@ const Navbar: React.FunctionComponent<Props> = ({ visible }) => {
                     background: #15C39A;
                     text-align: center;
                     overflow: hidden;
+                    display: flex;
+                    flex-wrap: wrap;
                 }
 
                 .hide {

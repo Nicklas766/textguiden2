@@ -7,7 +7,6 @@ const TextWrapper: React.FunctionComponent = ({ children }) => (
                 width: 90%;
                 margin: auto;
             }
-
         `}</style>
     </div>
 )

@@ -67,7 +67,6 @@ const Home: NextPage = () => (
                      imgSrc='/static/about-us.png' 
                      text='Om oss' 
                      color='#43cfa8' />
-
     </Layout>
 );
 

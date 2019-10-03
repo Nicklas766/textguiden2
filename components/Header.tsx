@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import HamburgerMenu from './HamburgerMenu';
 import Navbar from './Navbar';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import VideogameAssetIcon from '@material-ui/icons/VideogameAsset';
 
 const Layout: React.FunctionComponent = () => {
     const [showNav, setShowNav] = useState(false);
@@ -9,18 +10,25 @@ const Layout: React.FunctionComponent = () => {
     return (
     <header>
         <Link href='/'>  
-            <a className='logo'><img src='/static/favicon.png'/></a>
+            <a className='centered-content logo'>
+                <img src='/static/favicon.png'/>
+                <h1>extGuiden</h1>
+            </a>
         </Link>
 
-        <div className='hamburger' onClick={() => setShowNav(!showNav)}>
+        <div className='centered-content displayed-links'>
+            <Link href='/om-oss'>  
+                <a className='centered-content'>Spela<VideogameAssetIcon/></a>
+            </Link> 
+        </div>
+
+        <div className='centered-content hamburger' onClick={() => setShowNav(!showNav)}>
             <HamburgerMenu isClicked={showNav}/>
         </div>
 
         <Navbar visible={showNav}/>
 
-
         <style jsx>{`
-
             header {
                 display: flex;
                 flex-wrap: wrap;
@@ -28,22 +36,40 @@ const Layout: React.FunctionComponent = () => {
                 background: #15C39A;
             }
 
-            .logo {
+            a {
+                text-decoration: none;
+                color: white;
+            }
+
+            .centered-content {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+            }
+
+            .logo {
                 width: 25%;
             }
 
-            .hamburger {
-                display: flex;
+            .displayed-links {
                 justify-content: flex-end;
-                align-items: center;
-                width: 70%;
-                margin-right: 5%;
+                width: 60%;
+            }
+
+            .displayed-links a {
+                height: 40px;
+                margin: 4px 0;
+                width: 100px;
+                background: #00a5b6;
+                color: white;
+                border-radius: 2em;
+            }
+
+            .hamburger {
+                width: 15%;
             }
         `}</style>
- </header>
+    </header>
     )
 }
 

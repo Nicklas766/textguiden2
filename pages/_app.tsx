@@ -14,13 +14,9 @@ class MyApp extends App {
         <p>TextGuiden använder cookies för att förbättra din upplevelse, <Link href='/datahantering'><a>läs mer här.</a></Link></p>
       </TimedBanner>
 
-      <TimedBanner buttonText='Jag antar utmaningen' link='/ord' timer={1000}>
-        <p>Du är utmanad!</p>
-      </TimedBanner>
-
       <Component {...pageProps} />
 
-                  <style jsx>{`
+      <style jsx>{`
                 div {
                     display: flex;
                     flex-wrap: wrap;
@@ -33,7 +29,7 @@ class MyApp extends App {
                   color: yellow;
                 }
 
-                `}</style>
+      `}</style>
     </div>
   }
 }
