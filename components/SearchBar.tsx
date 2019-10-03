@@ -19,7 +19,7 @@ const SearchBar: React.FunctionComponent = () => {
             />
         
             <Button
-                onClick={() => Router.push('/ord/[word]}', `/ord/${text.toLowerCase()}`, {shallow: true})}
+                onClick={() => Router.push('/ord/[word]', `/ord/${text.toLowerCase()}`, {shallow: true})}
                 fullWidth
                 color="default"
                 style={{background: '#15C39A', color: 'white', marginTop: '12px'}}
