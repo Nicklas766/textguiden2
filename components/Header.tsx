@@ -16,14 +16,16 @@ const Layout: React.FunctionComponent = () => {
             </a>
         </Link>
 
-        <div className='centered-content displayed-links'>
+
+        <div className='centered-content hamburger' onClick={() => setShowNav(!showNav)}>
+
             <Link href='/om-oss'>  
                 <a className='centered-content'>Spela<VideogameAssetIcon/></a>
             </Link> 
-        </div>
 
-        <div className='centered-content hamburger' onClick={() => setShowNav(!showNav)}>
-            <HamburgerMenu isClicked={showNav}/>
+            <div onClick={() => setShowNav(!showNav)}>
+                <HamburgerMenu isClicked={showNav}/>
+            </div>
         </div>
 
         <Navbar visible={showNav}/>
@@ -51,22 +53,19 @@ const Layout: React.FunctionComponent = () => {
                 width: 25%;
             }
 
-            .displayed-links {
-                justify-content: flex-end;
-                width: 60%;
-            }
-
-            .displayed-links a {
+            .hamburger a {
                 height: 40px;
                 margin: 4px 0;
                 width: 100px;
                 background: #00a5b6;
                 color: white;
                 border-radius: 2em;
+                margin-right: 10%;
             }
 
             .hamburger {
-                width: 15%;
+                width: 65%;
+                justify-content: flex-end;
             }
         `}</style>
     </header>
