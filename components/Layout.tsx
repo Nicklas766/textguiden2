@@ -54,6 +54,7 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description }
             letter-spacing: 1.1px;
         }
 
+    
         p {
             font-family: 'Open Sans', sans-serif;
             font-weight: 300;

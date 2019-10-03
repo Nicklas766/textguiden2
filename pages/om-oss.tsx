@@ -18,16 +18,15 @@ const About: NextPage = () => (
                 inhämtade från en källa som inte får anges eftersom datan har bearbetats. Datan uppdateras ständigt och därav kan enstaka fel förekomma.
             </p>
 
-                <style jsx>{`
-
-                    img {
-                        margin: auto;
-                        display: block;
-                    }
-                    h1 {
-                        border-bottom: 1px solid silver;
-                        text-align: center;
-                    }
+            <style jsx>{`
+                img {
+                    margin: auto;
+                    display: block;
+                }
+                h1 {
+                    border-bottom: 1px solid silver;
+                    text-align: center;
+                }
             `}</style>
         </TextWrapper>
     </Layout>
