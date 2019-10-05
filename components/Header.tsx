@@ -17,9 +17,9 @@ const Layout: React.FunctionComponent = () => {
         </Link>
 
 
-        <div className='centered-content hamburger' onClick={() => setShowNav(!showNav)}>
+        <div className='centered-content hamburger'>
 
-            <Link href='/om-oss'>  
+            <Link href='/spel'>  
                 <a className='centered-content'>Spela<VideogameAssetIcon/></a>
             </Link> 
 
