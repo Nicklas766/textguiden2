@@ -1,42 +1,74 @@
-import { useState, useEffect, FunctionComponent } from 'react';
+import { useState, FunctionComponent } from 'react';
 
 // I assume it's not going to be more than 10 atm..
-const calculateStartingPos = (index: number) => {
+const calculateStartingStyle = (index: number) => {
+    const style = {
+        width: '100px',
+        touchAction: 'none',
+        height: '75px',
+        background: 'white',
+        borderRadius: '2em',
+        zIndex: 0
+    };
+
     if (index < 5) {
-        return { left: index * 20 + '%', top: '0px' };
+        return { ...style, left: index * 20 + '%', top: '0px' };
     }
-    return { left: (index - 5) * 20 + '%', top: '50px' };
+    return { ...style, left: (index - 5) * 20 + '%', top: '50px' };
 }
 
 const Draggable: FunctionComponent<{ index: number, text: string }> = ({ index, text }) => {
-    const [pos, setPos] = useState(calculateStartingPos(index));
 
-    const style = {
-        width: '50px',
-        touchAction: 'none',
-        height: '50px',
-        background: 'white',
-        borderRadius: '2em'
-    };
+    const [style, setStyle] = useState(calculateStartingStyle(index))
+    const [clicked, setClicked] = useState(false);
 
-    const handleTouchMove = (e: any) => {
+    const handleMove = (e: any) => {
         e.preventDefault();
+        e.stopPropagation();
 
-        var touchLocation = e.targetTouches[0];
+        if (clicked) {
+            let left, top;
 
-        const pageX = touchLocation.pageX;
-        const pageY = touchLocation.pageY;
+            if (e.type === 'touchmove') {
+                let touchLocation = e.targetTouches[0];
+                left = (touchLocation.pageX - e.target.parentNode.offsetLeft) - 50 + 'px';
+                top = (touchLocation.pageY - e.target.parentNode.offsetTop) - 35 + 'px';
+            }
+            else {
+                left = (e.pageX - e.target.parentNode.offsetLeft) - 50 + 'px';
+                top = (e.pageY - e.target.parentNode.offsetTop) - 35 + 'px';
 
-        let x = pageX - e.target.parentNode.offsetLeft;
-        let y = pageY - e.target.parentNode.offsetTop;
-
-        setPos({
-            left: x - 25 + 'px',
-            top: y - 25 + 'px'
-        });
+            }
+            setStyle({ ...style, left, top });
+        }
     }
 
-    return <div data-index={index} style={{ ...style, ...pos, position: 'absolute' }} onTouchMove={(e) => handleTouchMove(e)}>
+    const handleActive = () => {
+        setStyle({...style, zIndex: 100, background: 'blue'})
+        setClicked(true)
+    }
+
+    const handleUp = (e: any) => {
+        if (clicked) {
+            setClicked(false);
+            setStyle(calculateStartingStyle(index))
+        }
+    }
+
+    return <div
+        data-index={index}
+        style={{ ...style, position: 'absolute' }}
+
+        onTouchStart={(e) => handleActive()}
+        onMouseDown={(e) => handleActive()}
+
+        onTouchMove={(e) => handleMove(e)}
+        onMouseMove={(e) => handleMove(e)}
+
+        onMouseLeave={(e) => handleUp(e)}
+        onMouseUp={(e) => handleUp(e)}
+        onTouchEnd={(e) => handleUp(e)}>
+
         {text}
     </div>
 }

@@ -46,7 +46,7 @@ const GameField: FunctionComponent<any> = ({ words, setWords, sentences, setSent
         }
     }
 
-    return <div className='touchField' onTouchEnd={(event) => handleTouchEnd(event)}>
+    return <div className='touchField' onTouchEnd={(event) => handleTouchEnd(event)} onMouseUp={(e) => handleTouchEnd(e)}>
 
         {words.map((w: WordObject, i: number) => <Draggable key={w.id} index={i} text={w.word} />)}
 
@@ -62,6 +62,7 @@ const GameField: FunctionComponent<any> = ({ words, setWords, sentences, setSent
                 flex-wrap: wrap;
                 justify-content: center;
                 background: green;
+                user-select: none;
             }`}</style>
     </div>;
 }
