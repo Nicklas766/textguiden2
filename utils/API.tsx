@@ -1,8 +1,5 @@
 import fetch from 'isomorphic-unfetch';
 import { ServerResponse } from 'http'
-
-interface ParsedUrlQuery { [key: string]: string | string[]; }
-
 const URL = 'http://localhost:3001';
 
 const API = {
