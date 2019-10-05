@@ -18,10 +18,10 @@ const GamePage: NextPage = () => {
 
         <p>Hur spelar man? Dra den till meningen, om du använder en stationär dator så behöver du dra sakta annars behöver du börja om</p>
 
-        <Game/>
-        
+        <Game />
 
-            <style jsx>{`
+
+        <style jsx>{`
             h1 {
                 text-align: center;
             }

@@ -3,6 +3,7 @@ import Layout from '../../components/Layout';
 import fetch from 'isomorphic-unfetch';
 import ErrorPage from 'next/error';
 import TextWrapper from '../../components/TextWrapper';
+import API from '../../utils/API';
 
 type Props = {
   error: boolean,
@@ -20,37 +21,24 @@ const Abbreviation: NextPage<Props> = ({ error, data }) => {
   }
 
   return (
-    <Layout title={`Hur förkortas ${data.word}?`} 
-            description={`Vad är förkortningen till ${data.word}? Här får du svaret till hur du förkortar ${data.word} korrekt.`}>
+    <Layout title={`Hur förkortas ${data.word}?`}
+      description={`Vad är förkortningen till ${data.word}? Här får du svaret till hur du förkortar ${data.word} korrekt.`}>
 
-            <TextWrapper>
-              <h1>Vad är förkortningen för "{data.word}"?</h1>
-              <p> Den korrekta förkortningen för "<b>{data.word}</b>" är <b>{data.abbreviation}</b></p>
+      <TextWrapper>
+        <h1>Vad är förkortningen för "{data.word}"?</h1>
+        <p> Den korrekta förkortningen för "<b>{data.word}</b>" är <b>{data.abbreviation}</b></p>
 
-              <h2>Vad betyder <b>{data.abbreviation}</b>?</h2>
-              <p><b>{data.abbreviation}</b> betyder <b>{data.word}</b> eftersom det är ordets förkortning.</p>
+        <h2>Vad betyder <b>{data.abbreviation}</b>?</h2>
+        <p><b>{data.abbreviation}</b> betyder <b>{data.word}</b> eftersom det är ordets förkortning.</p>
 
-              <h2>Exempelmening för <b>{data.abbreviation}</b></h2>
-              <p>{data.example}</p>
-            </TextWrapper>
+        <h2>Exempelmening för <b>{data.abbreviation}</b></h2>
+        <p>{data.example}</p>
+      </TextWrapper>
     </Layout>
   )
 
 };
 
-Abbreviation.getInitialProps = async function({ res, query }) {
-  const fetchRes = await fetch(`http://localhost:3001/abbreviations/${query.abbreviation}`);
-  const data = await fetchRes.json();
-
-  // This ensure we return a 404 status code and not 200 if error occurs
-  if (fetchRes.status === 404 && res) {
-    res.statusCode = 404;
-  }
-
-  return { 
-    error: fetchRes.status === 404,
-    data
-  };
-};
+Abbreviation.getInitialProps = async ({ res, query }) => await API.getDataErrorFirst(res, `/abbreviations/${query.abbreviation}`);
 
 export default Abbreviation;

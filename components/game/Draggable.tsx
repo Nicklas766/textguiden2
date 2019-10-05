@@ -37,14 +37,13 @@ const Draggable: FunctionComponent<{ index: number, text: string }> = ({ index, 
             else {
                 left = (e.pageX - e.target.parentNode.offsetLeft) - 50 + 'px';
                 top = (e.pageY - e.target.parentNode.offsetTop) - 35 + 'px';
-
             }
             setStyle({ ...style, left, top });
         }
     }
 
     const handleActive = () => {
-        setStyle({...style, zIndex: 100, background: 'blue'})
+        setStyle({ ...style, zIndex: 100, background: 'blue' })
         setClicked(true)
     }
 

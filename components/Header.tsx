@@ -8,29 +8,29 @@ const Layout: React.FunctionComponent = () => {
     const [showNav, setShowNav] = useState(false);
 
     return (
-    <header>
-        <Link href='/'>  
-            <a className='centered-content logo'>
-                <img src='/static/favicon.png'/>
-                <h1>extGuiden</h1>
-            </a>
-        </Link>
+        <header>
+            <Link href='/'>
+                <a className='centered-content logo'>
+                    <img src='/static/favicon.png' />
+                    <h1>extGuiden</h1>
+                </a>
+            </Link>
 
 
-        <div className='centered-content hamburger'>
+            <div className='centered-content hamburger'>
 
-            <Link href='/spel'>  
-                <a className='centered-content'>Spela<VideogameAssetIcon/></a>
-            </Link> 
+                <Link href='/spel'>
+                    <a className='centered-content'>Spela<VideogameAssetIcon /></a>
+                </Link>
 
-            <div onClick={() => setShowNav(!showNav)}>
-                <HamburgerMenu isClicked={showNav}/>
+                <div onClick={() => setShowNav(!showNav)}>
+                    <HamburgerMenu isClicked={showNav} />
+                </div>
             </div>
-        </div>
 
-        <Navbar visible={showNav}/>
+            <Navbar visible={showNav} />
 
-        <style jsx>{`
+            <style jsx>{`
             header {
                 display: flex;
                 flex-wrap: wrap;
@@ -68,7 +68,7 @@ const Layout: React.FunctionComponent = () => {
                 justify-content: flex-end;
             }
         `}</style>
-    </header>
+        </header>
     )
 }
 

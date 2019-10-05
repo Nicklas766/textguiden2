@@ -35,38 +35,38 @@ const FeaturedLink: React.FunctionComponent<Props> = ({ imgSrc, text, color, hre
                     margin: 5% auto 0% auto;
                 }
         `}</style>
-    </a>
-</Link>
+        </a>
+    </Link>
 )
 
 
 const Home: NextPage = () => (
-    <Layout title='TextGuiden' description='En svensk ordbok'> 
+    <Layout title='TextGuiden' description='En svensk ordbok'>
 
-        <FeaturedLink 
-                      href='/spel' 
-                      imgSrc='/static/gamepad.png' 
-                      text='Utmana dig själv' 
-                      color='#00a5b6' />
+        <FeaturedLink
+            href='/spel'
+            imgSrc='/static/gamepad.png'
+            text='Utmana dig själv'
+            color='#00a5b6' />
 
-        <FeaturedLink 
-                      href='/ord' 
-                      imgSrc='/static/open-book.png' 
-                      text='Titta i vår ordbok' 
-                      color='#43cfa8' />
+        <FeaturedLink
+            href='/ord'
+            imgSrc='/static/open-book.png'
+            text='Titta i vår ordbok'
+            color='#43cfa8' />
 
-        <FeaturedLink 
-                      href='/hur-forkortas' 
-                      imgSrc='/static/loupe.png' 
-                      text='Förkortningar' 
-                      color='#00bbb4' />
+        <FeaturedLink
+            href='/hur-forkortas'
+            imgSrc='/static/loupe.png'
+            text='Förkortningar'
+            color='#00bbb4' />
 
 
-        <FeaturedLink 
-                     href='/om-oss' 
-                     imgSrc='/static/about-us.png' 
-                     text='Om oss' 
-                     color='#43cfa8' />
+        <FeaturedLink
+            href='/om-oss'
+            imgSrc='/static/about-us.png'
+            text='Om oss'
+            color='#43cfa8' />
     </Layout>
 );
 

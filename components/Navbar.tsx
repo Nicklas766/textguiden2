@@ -4,23 +4,23 @@ type Props = {
     visible: boolean
 }
 
-const Navbar: React.FunctionComponent<Props> = ({ visible }) => { 
+const Navbar: React.FunctionComponent<Props> = ({ visible }) => {
     return (
         <nav className={visible ? 'show' : 'hide'}>
 
-            <Link href='/'>  
+            <Link href='/'>
                 <a>Hem</a>
             </Link>
-   
-            <Link href='/om-oss'>  
+
+            <Link href='/om-oss'>
                 <a>Om oss</a>
             </Link>
 
-            <Link href='/hur-forkortas'>  
+            <Link href='/hur-forkortas'>
                 <a>Förkortningar</a>
             </Link>
 
-            <Link href='/ord'>  
+            <Link href='/ord'>
                 <a>Slå upp ord</a>
             </Link>
 

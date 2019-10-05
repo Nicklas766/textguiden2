@@ -14,7 +14,7 @@ const About: NextPage = () => (
             </p>
 
             <p>
-                Datan till språkverktyget har vi byggt upp själva genom att studera det svenska språket. Alla namn som finns på hemsidan är dock 
+                Datan till språkverktyget har vi byggt upp själva genom att studera det svenska språket. Alla namn som finns på hemsidan är dock
                 inhämtade från en källa som inte får anges eftersom datan har bearbetats. Datan uppdateras ständigt och därav kan enstaka fel förekomma.
             </p>
 

@@ -4,12 +4,12 @@ import Link from 'next/link';
 import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined';
 
 type Props = {
-    timer: number,
-    buttonText: string,
-    link?: string
+  timer: number,
+  buttonText: string,
+  link?: string
 }
 
-const TimedBanner: React.FunctionComponent<Props> = ({ timer, buttonText, link, children }) => { 
+const TimedBanner: React.FunctionComponent<Props> = ({ timer, buttonText, link, children }) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -17,35 +17,35 @@ const TimedBanner: React.FunctionComponent<Props> = ({ timer, buttonText, link, 
   }, []);
 
   const mainButton = (
-  <Button
-        onClick={() => setVisible(false)}
-        style={{ color: 'white', background: '#15C39A' }}
-        variant="outlined"
-        color="default">
+    <Button
+      onClick={() => setVisible(false)}
+      style={{ color: 'white', background: '#15C39A' }}
+      variant="outlined"
+      color="default">
 
-        {buttonText}
-  </Button>);
+      {buttonText}
+    </Button>);
 
   if (visible) {
     return (
       <div>
-          {children}
+        {children}
 
-          <span style={{marginLeft: '0.3%'}}>
-            {link && <Link href={link}><a>{mainButton}</a></Link>}
-            {!link && mainButton}
-          </span>
+        <span style={{ marginLeft: '0.3%' }}>
+          {link && <Link href={link}><a>{mainButton}</a></Link>}
+          {!link && mainButton}
+        </span>
 
-          <Button
-                 onClick={() => setVisible(false)}
-                 style={{color: 'white', background: '#DC7D4C', marginLeft: '0.3%'}}
-                 variant="outlined"
-                 color="default">
+        <Button
+          onClick={() => setVisible(false)}
+          style={{ color: 'white', background: '#DC7D4C', marginLeft: '0.3%' }}
+          variant="outlined"
+          color="default">
 
-                <CloseOutlinedIcon/>
-          </Button>
+          <CloseOutlinedIcon />
+        </Button>
 
-          <style jsx>{`
+        <style jsx>{`
             div {
                 display: flex;
                 flex-wrap: wrap;
@@ -60,7 +60,7 @@ const TimedBanner: React.FunctionComponent<Props> = ({ timer, buttonText, link, 
                 text-decoration: none;
             }
             `}</style>
-    </div>
+      </div>
     );
   }
 

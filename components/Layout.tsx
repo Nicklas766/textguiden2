@@ -2,29 +2,29 @@ import Head from 'next/head';
 import Header from './Header'
 
 type Props = {
-  title: string,
-  description: string
+    title: string,
+    description: string
 }
 
 const Layout: React.FunctionComponent<Props> = ({ children, title, description }) => (
-  <div className='site-wrapper'>
-    <Head>
-      <title>{title}</title>
-      <meta name='description' content={description}/>
-      <meta charSet="UTF-8" />
-      <meta name='viewport' content='initial-scale=1.0, width=device-width' key='viewport' />
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
-    </Head>
+    <div className='site-wrapper'>
+        <Head>
+            <title>{title}</title>
+            <meta name='description' content={description} />
+            <meta charSet="UTF-8" />
+            <meta name='viewport' content='initial-scale=1.0, width=device-width' key='viewport' />
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+        </Head>
 
-    <Header/>
+        <Header />
 
-    <div className='content-wrapper'>
-        {children}
-    </div>
+        <div className='content-wrapper'>
+            {children}
+        </div>
 
 
-    <style jsx>{`
+        <style jsx>{`
         .site-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -47,7 +47,7 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description }
         }
     `}</style>
 
-    <style jsx global>{`
+        <style jsx global>{`
         @media (max-width: 1000px) {
             header a h1 {
                 display: none;
@@ -83,7 +83,7 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description }
             font-family: 'Montserrat', sans-serif;
         }
       `}</style>
-  </div>
+    </div>
 )
 
 export default Layout;
