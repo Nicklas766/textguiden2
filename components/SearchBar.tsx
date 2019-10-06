@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
 import SearchIcon from '@material-ui/icons/Search';
@@ -10,21 +10,21 @@ const SearchBar: React.FunctionComponent = () => {
 
     return (
         <div>
-            <TextField 
+            <TextField
                 onChange={(event) => setText(event.target.value)}
                 value={text}
-                fullWidth 
-                variant="outlined" 
-                label="Sök efter ett ord" 
+                fullWidth
+                variant="outlined"
+                label="Sök efter ett ord"
             />
-        
+
             <Button
-                onClick={() => Router.push('/ord/[word]', `/ord/${text.toLowerCase()}`, {shallow: true})}
+                onClick={() => Router.push('/ord/[word]', `/ord/${text.toLowerCase()}`, { shallow: true })}
                 fullWidth
                 color="default"
-                style={{background: '#15C39A', color: 'white', marginTop: '12px'}}
+                style={{ background: '#15C39A', color: 'white', marginTop: '12px' }}
             >
-                <SearchIcon/>
+                <SearchIcon />
             </Button>
         </div>
     )

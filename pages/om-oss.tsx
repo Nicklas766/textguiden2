@@ -9,7 +9,7 @@ const About: NextPage = () => (
             <h1>Om oss</h1>
 
             <p>
-                Vårt mål med denna hemsida är att göra det lättare att öva på svenska. Vi har skapat ett spel som med hjälp av språkteknologi.
+                Vårt mål med denna hemsida är att göra det lättare att öva på svenska. Vi har skapat ett spel med hjälp av språkteknologi.
                 Man kan använda för att antingen öva på svenska eller för att utmana sig själv. Om man fastnar så kan du söka efter orden för att få mer information om dem.
             </p>
 

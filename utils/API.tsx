@@ -4,6 +4,8 @@ const URL = 'http://localhost:3001';
 
 const API = {
 
+
+  
   async getData(route: string) {
     const res = await fetch(`${URL + route}`);
     const data = await res.json();

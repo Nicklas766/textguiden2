@@ -5,7 +5,7 @@ import SearchBar from '../../components/SearchBar';
 import TextWrapper from '../../components/TextWrapper';
 
 const WordSearch: NextPage = () => (
-    <Layout title='Sök ord' description='här kan du söka bland våra ord'> 
+    <Layout title='Sök ord' description='här kan du söka bland våra ord'>
         <TextWrapper>
             <h1>Information om ord</h1>
             <p>
