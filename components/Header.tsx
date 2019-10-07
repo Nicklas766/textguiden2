@@ -15,7 +15,6 @@ const Layout: React.FunctionComponent = () => {
                 </a>
             </Link>
 
-
             <div className='centered-content hamburger'>
 
                 <Link href='/spel'>

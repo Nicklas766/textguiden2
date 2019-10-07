@@ -11,7 +11,7 @@ class MyApp extends App {
     return <div>
 
       <TimedBanner buttonText='Jag förstår' timer={3000}>
-        <p>TextGuiden använder cookies för att förbättra din upplevelse, <Link href='/datahantering'><a>läs mer här.</a></Link></p>
+        <p>TextGuiden använder cookies för att förbättra din upplevelse, <Link href='/datahantering'><a>läs mer här</a></Link>.</p>
       </TimedBanner>
 
       <Component {...pageProps} />
