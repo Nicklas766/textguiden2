@@ -2,7 +2,6 @@ import Link from 'next/link';
 import HamburgerMenu from './HamburgerMenu';
 import Navbar from './Navbar';
 import { useState, useEffect } from 'react';
-import VideogameAssetIcon from '@material-ui/icons/VideogameAsset';
 
 const Layout: React.FunctionComponent = () => {
     const [showNav, setShowNav] = useState(false);
@@ -20,7 +19,7 @@ const Layout: React.FunctionComponent = () => {
             <div className='centered-content hamburger'>
 
                 <Link href='/spel'>
-                    <a className='centered-content'>Spela<VideogameAssetIcon /></a>
+                    <a className='centered-content'>Spela</a>
                 </Link>
 
                 <div onClick={() => setShowNav(!showNav)}>
