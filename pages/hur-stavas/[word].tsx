@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Layout from '../../components/Layout';
 import fetch from 'isomorphic-unfetch';
-import ErrorPage from 'next/error';
+import ErrorPage from '../_error';
 import TextWrapper from '../../components/TextWrapper';
 import API from '../../utils/API';
 

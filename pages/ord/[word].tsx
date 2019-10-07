@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import Layout from '../../components/Layout';
 import TextWrapper from '../../components/TextWrapper';
 import fetch from 'isomorphic-unfetch';
-import ErrorPage from 'next/error';
+import { WordErrorPage } from '../_error';
 import Link from 'next/link';
 import API from '../../utils/API';
 
@@ -13,6 +13,7 @@ type Props = {
     text: string,
     details: [],
     forms: [],
+    _optional_: string,
   }
 }
 
@@ -21,7 +22,7 @@ const ConditionalShowDiv: React.FunctionComponent<{ visible: boolean }> = ({ vis
 const WordInfo: NextPage<Props> = ({ error, data }) => {
 
   if (error) {
-    return <ErrorPage statusCode={404} />
+    return <WordErrorPage statusCode={404} word={data._optional_} />
   }
 
   return (
@@ -42,7 +43,7 @@ const WordInfo: NextPage<Props> = ({ error, data }) => {
           <h2>Hur böjs <i>{data.word}</i>?</h2>
           <ul>
             {data.forms.map(form =>
-              <li>
+              <li key={form}>
                 <Link href="/ord/[word]" as={`/ord/${form}`}>
                   <a>{form}</a>
                 </Link>
@@ -59,6 +60,6 @@ const WordInfo: NextPage<Props> = ({ error, data }) => {
   )
 };
 
-WordInfo.getInitialProps = async ({ res, query }) => await API.getDataErrorFirst(res, `/word/${query.word}`);
+WordInfo.getInitialProps = async ({ res, query }) => await API.getDataErrorFirst(res, `/word/${query.word}`, query.word);
 
 export default WordInfo;

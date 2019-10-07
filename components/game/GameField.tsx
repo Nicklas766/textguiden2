@@ -1,5 +1,5 @@
 import { useState, useRef, createRef, useEffect, FunctionComponent } from 'react';
-import { MockApi, WordObject, SentenceObject, GameData } from './Shared'
+import { WordObject, SentenceObject, GameData } from './Shared'
 import Draggable from './Draggable'
 import Droppable from './Droppable'
 

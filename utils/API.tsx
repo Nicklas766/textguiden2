@@ -4,8 +4,6 @@ const URL = 'http://localhost:3001';
 
 const API = {
 
-
-  
   async getData(route: string) {
     const res = await fetch(`${URL + route}`);
     const data = await res.json();
@@ -13,7 +11,7 @@ const API = {
     return { data };
   },
 
-  async getDataErrorFirst(res: ServerResponse | undefined, route: string) {
+  async getDataErrorFirst(res: ServerResponse | undefined, route: string, optional?: any) {
     const fetchRes = await fetch(`${URL + route}`);
     const data = await fetchRes.json();
 
@@ -24,7 +22,7 @@ const API = {
 
     return {
       error: fetchRes.status === 404,
-      data
+      data: {...data, _optional_: optional}
     };
   }
 }
