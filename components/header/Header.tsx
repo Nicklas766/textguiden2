@@ -10,7 +10,7 @@ const Layout: React.FunctionComponent = () => {
         <header>
             <Link href='/'>
                 <a className='centered-content logo'>
-                    <img src='/static/favicon.png' />
+                    <img alt='textguiden logo' src='/static/favicon.png' />
                     <h1>extGuiden</h1>
                 </a>
             </Link>
@@ -55,7 +55,7 @@ const Layout: React.FunctionComponent = () => {
                 height: 40px;
                 margin: 4px 0;
                 width: 100px;
-                background: #00a5b6;
+                background: #007888;
                 color: white;
                 border-radius: 2em;
                 margin-right: 10%;

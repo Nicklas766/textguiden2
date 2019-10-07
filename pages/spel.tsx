@@ -1,8 +1,5 @@
 import { NextPage } from 'next';
 import Layout from '../components/Layout';
-
-
-// import Field from '../components/game/Field';
 import Game from '../components/game/Game';
 
 import { useState } from 'react';

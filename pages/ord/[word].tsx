@@ -1,7 +1,6 @@
 import { NextPage } from 'next';
 import Layout from '../../components/Layout';
 import TextWrapper from '../../components/TextWrapper';
-import fetch from 'isomorphic-unfetch';
 import { WordErrorPage } from '../_error';
 import Link from 'next/link';
 import API from '../../utils/API';

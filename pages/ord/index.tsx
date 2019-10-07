@@ -1,8 +1,10 @@
 import { NextPage } from 'next';
 import Layout from '../../components/Layout';
 import Link from 'next/link';
-import SearchBar from '../../components/SearchBar';
 import TextWrapper from '../../components/TextWrapper';
+import dynamic from 'next/dynamic'
+const SearchBar = dynamic(() => import('../../components/SearchBar'))
+
 
 const WordSearch: NextPage = () => (
     <Layout title='Sök ord' description='här kan du söka bland våra ord'>

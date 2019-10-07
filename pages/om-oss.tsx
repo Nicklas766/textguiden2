@@ -5,7 +5,6 @@ import TextWrapper from '../components/TextWrapper';
 const About: NextPage = () => (
     <Layout title='TextGuiden - Om oss' description='En hemsida skapad av språkentusiaster och programmerare. Läs gärna mer om oss.'>
         <TextWrapper>
-
             <h1>Om oss</h1>
 
             <p>
@@ -19,10 +18,6 @@ const About: NextPage = () => (
             </p>
 
             <style jsx>{`
-                img {
-                    margin: auto;
-                    display: block;
-                }
                 h1 {
                     border-bottom: 1px solid silver;
                     text-align: center;

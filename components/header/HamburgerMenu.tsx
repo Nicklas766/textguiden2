@@ -32,7 +32,6 @@ const HamburgerMenu: React.FunctionComponent<Props> = ({ isClicked }) => (
                 -webkit-transform: rotate(45deg) translate(-8px, -8px);
                 transform: rotate(45deg) translate(-8px, -8px);
             }
-
         `}</style>
     </div>
 )

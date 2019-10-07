@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
 import Layout from '../../components/Layout';
-import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
 import TextWrapper from '../../components/TextWrapper';
 import API from '../../utils/API';

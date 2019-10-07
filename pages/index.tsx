@@ -2,17 +2,21 @@ import { NextPage } from 'next';
 import Layout from '../components/Layout';
 import Link from 'next/link';
 
+import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
+import SearchIcon from '@material-ui/icons/Search';
+import ShortTextIcon from '@material-ui/icons/ShortText';
+import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
+
 type Props = {
-    imgSrc: string,
     text: string,
     color: string,
     href: string
 }
 
-const FeaturedLink: React.FunctionComponent<Props> = ({ imgSrc, text, color, href }) => (
+const FeaturedLink: React.FunctionComponent<Props> = ({ text, color, href, children }) => (
     <Link href={href}>
         <a>
-            <img src={imgSrc} />
+            {children}
             <h2>{text}</h2>
 
             <style jsx>{`
@@ -39,34 +43,55 @@ const FeaturedLink: React.FunctionComponent<Props> = ({ imgSrc, text, color, hre
     </Link>
 )
 
-
+const iconStyle = {
+    fontSize: '10em',
+    margin: '5% auto'
+}
 const Home: NextPage = () => (
     <Layout title='TextGuiden' description='En svensk ordbok'>
 
         <FeaturedLink
             href='/spel'
-            imgSrc='/static/gamepad.png'
             text='Utmana dig själv'
-            color='#00a5b6' />
+            color='#007888'>
 
+            <SportsEsportsIcon style={iconStyle} />
+        </FeaturedLink>
         <FeaturedLink
             href='/ord'
-            imgSrc='/static/open-book.png'
             text='Titta i vår ordbok'
-            color='#43cfa8' />
+            color='#245F73'>
+
+            <SearchIcon style={iconStyle} />
+
+        </FeaturedLink>
 
         <FeaturedLink
             href='/hur-forkortas'
-            imgSrc='/static/loupe.png'
             text='Förkortningar'
-            color='#00bbb4' />
+            color='#007888'>
+
+            <ShortTextIcon style={iconStyle} />
+
+        </FeaturedLink>
 
 
         <FeaturedLink
             href='/om-oss'
-            imgSrc='/static/about-us.png'
             text='Om oss'
-            color='#43cfa8' />
+            color='#245F73'>
+
+            <EmojiPeopleIcon style={iconStyle} />
+
+        </FeaturedLink>
+
+
+        <style jsx>{`
+                .MuiSvgIcon-root {
+                    font-size: 12em;
+                    margin: auto;
+                }
+        `}</style>
     </Layout>
 );
 

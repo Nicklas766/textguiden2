@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Header from './Header'
+import Header from './header/Header'
 
 type Props = {
     title: string,
@@ -14,9 +14,9 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description, 
             <meta name='description' content={description} />
             <meta charSet="UTF-8" />
             <meta name='viewport' content='initial-scale=1.0, width=device-width' key='viewport' />
-            {!shouldBeIndexed && <meta name="robots" content="noindex"/>}
-            <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
-            <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+            {!shouldBeIndexed && <meta name="robots" content="noindex" />}
+            <link rel="preload" as="font" type="font/woff2" href="/static/fonts/open-sans-v17-latin-regular.woff2" crossOrigin={'true'} />
+            <link rel="preload" as="font" type="font/woff2" href="/static/fonts/montserrat-v14-latin-regular.woff2" crossOrigin={'true'} />
         </Head>
 
         <Header />
@@ -27,6 +27,34 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description, 
 
 
         <style jsx>{`
+        /* montserrat-regular - latin */
+        @font-face {
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 400;
+          src: url('../static/fonts/montserrat-v14-latin-regular.eot'); /* IE9 Compat Modes */
+          src: local('Montserrat Regular'), local('Montserrat-Regular'),
+               url('../static/fonts/montserrat-v14-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+               url('../static/fonts/montserrat-v14-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+               url('../static/fonts/montserrat-v14-latin-regular.woff') format('woff'), /* Modern Browsers */
+               url('../static/fonts/montserrat-v14-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+               url('../static/fonts/montserrat-v14-latin-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
+        }
+
+        /* open-sans-regular - latin */
+        @font-face {
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: 400;
+          src: url('../static/fonts/open-sans-v17-latin-regular.eot'); /* IE9 Compat Modes */
+          src: local('Open Sans Regular'), local('OpenSans-Regular'),
+               url('../static/fonts/open-sans-v17-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+               url('../static/fonts/open-sans-v17-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+               url('../static/fonts/open-sans-v17-latin-regular.woff') format('woff'), /* Modern Browsers */
+               url('../static/fonts/open-sans-v17-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+               url('../static/fonts/open-sans-v17-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+        }
+
         .site-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -64,19 +92,16 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description, 
 
         h1, h2, h3 {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
         }
 
         li {
             font-family: 'Open Sans', sans-serif;
             margin-top: 5px;
-            font-weight: 300;
             letter-spacing: 1.1px;
         }
 
         p {
             font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
             letter-spacing: 1.4px;
             line-height: 1.78em;
         }
