@@ -1,5 +1,5 @@
-import { useState, useRef, createRef, useEffect, FunctionComponent } from 'react';
-import { WordObject, SentenceObject, GameData } from './Shared'
+import { useState, useRef, FunctionComponent } from 'react';
+import { WordObject } from './Shared'
 import Draggable from './Draggable'
 import Droppable from './Droppable'
 import CompletedGame from './CompletedGame'
@@ -41,9 +41,9 @@ const GameField: FunctionComponent<any> = ({ words, setWords, sentences, setSent
 
     return <div className='touchField' onTouchEnd={(event) => handleTouchEnd(event)} onMouseUp={(e) => handleTouchEnd(e)}>
 
-        {words.map((w: WordObject, i: number) => <Draggable key={w.id} index={i} text={w.word} />)}
+        {words.map((w: WordObject, i: number) => <Draggable key={i} index={i} text={w.word} />)}
 
-        {sentences.length > 0 ? <Droppable ref={refs} text={sentences[0].text} />: <CompletedGame/>}
+        {sentences.length > 0 ? <Droppable ref={refs} text={sentences[0].text} /> : <CompletedGame />}
 
         <style jsx>{`
             .touchField {

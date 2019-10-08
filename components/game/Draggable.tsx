@@ -12,7 +12,8 @@ const calculateStartingStyle = (index: number) => {
         background: '#2F4858',
         color: 'white',
         borderRadius: '2em',
-        zIndex: 0
+        zIndex: 0,
+        boxShadow: ''
     };
 
     if (index < 3) {
@@ -43,7 +44,7 @@ const Draggable: FunctionComponent<{ index: number, text: string }> = ({ index, 
                 top = (touchLocation.pageY - e.target.parentNode.offsetTop) - 25 + 'px';
             }
             else {
-                left = (e.pageX - e.target.parentNode.offsetLeft) - 50 + 'px';
+                left = (e.pageX - e.target.parentNode.offsetLeft) - 70 + 'px';
                 top = (e.pageY - e.target.parentNode.offsetTop) - 25 + 'px';
             }
             setStyle({ ...style, left, top });
@@ -51,7 +52,7 @@ const Draggable: FunctionComponent<{ index: number, text: string }> = ({ index, 
     }
 
     const handleActive = () => {
-        setStyle({ ...style, zIndex: 100, background: '#007888' })
+        setStyle({ ...style, zIndex: 100, background: '#007888', boxShadow: 'black 1px 1px 5px 1px' })
         setClicked(true)
     }
 

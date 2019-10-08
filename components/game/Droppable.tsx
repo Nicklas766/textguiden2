@@ -1,7 +1,6 @@
 import { forwardRef } from 'react';
 
-const Droppable = forwardRef((props: { text: string }, ref: any) => {
-    const { text } = props;
+const Droppable = forwardRef(({ text }: { text: string }, ref: any) => {
 
     const splittedText = text.replace('(?)', '-(?)-').split('-');
 
@@ -27,7 +26,6 @@ const Droppable = forwardRef((props: { text: string }, ref: any) => {
             .empty {
                 height: 50px;
                 background: white;
-                color: #2F4858;
                 border-radius: 2em;
             }
 

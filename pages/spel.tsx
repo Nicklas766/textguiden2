@@ -1,20 +1,17 @@
 import { NextPage } from 'next';
 import Layout from '../components/Layout';
 import Game from '../components/game/Game';
+import AcceptTerms from '../components/game/AcceptTerms';
 
-import { useState } from 'react';
 
 const GamePage: NextPage = () => {
 
-
     return <Layout title='TextGuiden - Spel' description='Vårt spel'>
 
-        <h1>Utmana dig själv - BETA</h1>
-
-        {/* <GameBoard/> */}
+        <h1>Öva på svenska</h1>
+        <AcceptTerms/>
 
         <Game />
-
 
         <style jsx>{`
             h1 {

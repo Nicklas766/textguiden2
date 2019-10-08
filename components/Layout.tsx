@@ -64,8 +64,6 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description, 
         .content-wrapper {
             width: 100%;
             background: white;
-            border-top-left-radius: 1em;
-            border-top-right-radius: 1em;
             min-height: 1000px;
         }
 
@@ -73,6 +71,8 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description, 
             .content-wrapper {
                 width: 50%;
                 margin: auto;
+                border-top-left-radius: 1em;
+                border-top-right-radius: 1em;
             }
         }
     `}</style>
@@ -90,8 +90,12 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description, 
             background: #15C39A;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, button, span, a {
             font-family: 'Montserrat', sans-serif;
+        }
+
+        div {
+            font-family: 'Open Sans', sans-serif;
         }
 
         li {
@@ -104,10 +108,6 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description, 
             font-family: 'Open Sans', sans-serif;
             letter-spacing: 1.4px;
             line-height: 1.78em;
-        }
-
-        a {
-            font-family: 'Montserrat', sans-serif;
         }
       `}</style>
     </div>

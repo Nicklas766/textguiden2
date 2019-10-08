@@ -53,11 +53,6 @@ const TimedBanner: React.FunctionComponent<Props> = ({ timer, buttonText, link, 
                 justify-content: center;
                 align-items: center;
                 padding: 7px;
-                width: 100%;
-            }
-
-            a {
-                text-decoration: none;
             }
             `}</style>
       </div>
