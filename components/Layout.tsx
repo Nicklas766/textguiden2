@@ -30,6 +30,7 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description, 
         /* montserrat-regular - latin */
         @font-face {
           font-family: 'Montserrat';
+          font-display: swap;
           font-style: normal;
           font-weight: 400;
           src: url('../static/fonts/montserrat-v14-latin-regular.eot'); /* IE9 Compat Modes */
@@ -44,6 +45,7 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description, 
         /* open-sans-regular - latin */
         @font-face {
           font-family: 'Open Sans';
+          font-display: swap;
           font-style: normal;
           font-weight: 400;
           src: url('../static/fonts/open-sans-v17-latin-regular.eot'); /* IE9 Compat Modes */

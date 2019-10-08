@@ -12,6 +12,7 @@ type Props = {
     text: string,
     details: [],
     forms: [],
+    synonyms: [],
     _optional_: string,
   }
 }
@@ -45,6 +46,18 @@ const WordInfo: NextPage<Props> = ({ error, data }) => {
               <li key={form}>
                 <Link href="/ord/[word]" as={`/ord/${form}`}>
                   <a>{form}</a>
+                </Link>
+              </li>)}
+          </ul>
+        </ConditionalShowDiv>
+
+        <ConditionalShowDiv visible={data.synonyms.length > 1}>
+          <h2>Synonymer till <i>{data.word}</i></h2>
+          <ul>
+            {data.synonyms.map(syn =>
+              <li key={syn}>
+                <Link href="/ord/[word]" as={`/ord/${syn}`}>
+                  <a>{syn}</a>
                 </Link>
               </li>)}
           </ul>

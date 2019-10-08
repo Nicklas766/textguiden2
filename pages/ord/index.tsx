@@ -2,8 +2,8 @@ import { NextPage } from 'next';
 import Layout from '../../components/Layout';
 import Link from 'next/link';
 import TextWrapper from '../../components/TextWrapper';
-import dynamic from 'next/dynamic'
-const SearchBar = dynamic(() => import('../../components/SearchBar'))
+import dynamic from 'next/dynamic';
+const SearchBar = dynamic(() => import('../../components/SearchBar'));
 
 
 const WordSearch: NextPage = () => (

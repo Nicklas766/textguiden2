@@ -2,6 +2,8 @@ import { NextPage } from 'next';
 import Layout from '../../components/Layout';
 import ErrorPage from '../_error';
 import TextWrapper from '../../components/TextWrapper';
+import dynamic from 'next/dynamic';
+const SearchBar = dynamic(() => import('../../components/SearchBar'));
 import API from '../../utils/API';
 
 const capFirstChar = (str: string) => str ? str[0].toUpperCase() + str.slice(1) : '';
@@ -34,6 +36,8 @@ const SpellingError: NextPage<Props> = ({ error, data }) => {
 
         <h2>Hur används ordet {data.correct}?</h2>
         <p>{data.information}</p>
+
+        <SearchBar/>
       </TextWrapper>
     </Layout>
   )
