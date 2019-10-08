@@ -13,13 +13,13 @@ const Game: FunctionComponent = () => {
 
     const updateStateData = () => {
         API.getData('/game')
-        .then(res => {
-            setWords(res.data.words)
-            setSentences(res.data.sentences)
-            setLoaded(true)
+            .then(res => {
+                setWords(res.data.words)
+                setSentences(res.data.sentences)
+                setLoaded(true)
 
-        })
-        .catch(err => console.log(err));
+            })
+            .catch(err => console.log(err));
     }
 
     if (loaded) {
@@ -34,7 +34,7 @@ const Game: FunctionComponent = () => {
             </Button>
 
             <GameField {...{ words, setWords, sentences, setSentences }} />
-            </div>
+        </div>
     }
     return <p>Laddar spelet...</p>
 }

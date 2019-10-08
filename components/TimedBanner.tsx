@@ -2,48 +2,41 @@ import { useState, useEffect } from 'react'
 import Button from '@material-ui/core/Button';
 import Link from 'next/link';
 import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 type Props = {
   timer: number,
-  buttonText: string,
-  link?: string
 }
 
-const TimedBanner: React.FunctionComponent<Props> = ({ timer, buttonText, link, children }) => {
+const TimedBanner: React.FunctionComponent<Props> = ({ timer, children }) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setVisible(true), timer)
   }, []);
 
-  const mainButton = (
-    <Button
-      onClick={() => setVisible(false)}
-      style={{ color: 'white', background: '#15C39A' }}
-      variant="outlined"
-      color="default">
-
-      {buttonText}
-    </Button>);
-
   if (visible) {
     return (
       <div>
         {children}
+        <ButtonGroup
+          variant="text"
+          color="default"
+          size="large"
+          aria-label="large contained secondary button group">
+          <Button
+            onClick={() => setVisible(false)}
+            aria-label="agreement button"
+            style={{ color: 'white', background: '#15C39A', marginLeft: '5px' }}>Jag förstår</Button>
 
-        <span style={{ marginLeft: '0.3%' }}>
-          {link && <Link href={link}><a>{mainButton}</a></Link>}
-          {!link && mainButton}
-        </span>
-
-        <Button
-          onClick={() => setVisible(false)}
-          style={{ color: 'white', background: '#DC7D4C', marginLeft: '0.3%' }}
-          variant="outlined"
-          color="default">
-
-          <CloseOutlinedIcon />
-        </Button>
+          <Button
+            onClick={() => setVisible(false)}
+            aria-label="close button"
+            style={{ color: 'white', background: '#DC7D4C' }}
+          >
+            <CloseOutlinedIcon />
+          </Button>
+        </ButtonGroup>
 
         <style jsx>{`
             div {

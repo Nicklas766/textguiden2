@@ -37,7 +37,7 @@ const SpellingError: NextPage<Props> = ({ error, data }) => {
         <h2>Hur används ordet {data.correct}?</h2>
         <p>{data.information}</p>
 
-        <SearchBar/>
+        <SearchBar />
       </TextWrapper>
     </Layout>
   )

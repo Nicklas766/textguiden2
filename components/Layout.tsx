@@ -91,7 +91,9 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description, 
             margin: 0;
             background: #15C39A;
         }
-
+        b {
+            color: #e2534f;
+        }
         h1, h2, h3, button, span, a {
             font-family: 'Montserrat', sans-serif;
         }
