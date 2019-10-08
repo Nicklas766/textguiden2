@@ -2,6 +2,7 @@ import { useState, useRef, createRef, useEffect, FunctionComponent } from 'react
 import { WordObject, SentenceObject, GameData } from './Shared'
 import Draggable from './Draggable'
 import Droppable from './Droppable'
+import CompletedGame from './CompletedGame'
 
 const isCollided = (wElement: HTMLElement, sElement: HTMLElement | null) => {
 
@@ -21,14 +22,14 @@ const isCollided = (wElement: HTMLElement, sElement: HTMLElement | null) => {
  * Keeps track of collisions of draggables and droppables and updates state accordingly
  */
 const GameField: FunctionComponent<any> = ({ words, setWords, sentences, setSentences }) => {
-    const refs = useRef<React.RefObject<HTMLInputElement>[]>(sentences.map((x: any) => createRef()))
+    const refs = useRef(null);
 
     const handleTouchEnd = (event: any) => {
         if (event.target.hasAttribute('data-index')) {
             const wordIndex: number = Number(event.target.getAttribute('data-index'));
             const wordObj: WordObject = words[wordIndex];
 
-            const collidedSentence = sentences.find((s: SentenceObject, i: number) => isCollided(event.target, refs.current[i].current) && wordObj.tags.includes(s.tag) && !s.completed);
+            const collidedSentence = sentences.find((s: SentenceObject, i: number) => isCollided(event.target, refs.current) && wordObj.tags.includes(s.tag));
             const indexOfCollidedSentence = sentences.indexOf(collidedSentence);
 
             if (indexOfCollidedSentence > -1) {
@@ -39,7 +40,6 @@ const GameField: FunctionComponent<any> = ({ words, setWords, sentences, setSent
 
                 setSentences([
                     ...sentences.slice(0, indexOfCollidedSentence),
-                    { ...sentences[indexOfCollidedSentence], completed: true, pickedWord: wordObj.word },
                     ...sentences.slice(indexOfCollidedSentence + 1)
                 ])
             }
@@ -50,10 +50,7 @@ const GameField: FunctionComponent<any> = ({ words, setWords, sentences, setSent
 
         {words.map((w: WordObject, i: number) => <Draggable key={w.id} index={i} text={w.word} />)}
 
-        <div style={{ marginTop: '25%' }}>
-            <h2>Lägg ditt valda ord i rätt mening</h2>
-            {sentences.map((s: SentenceObject, i: number) => <Droppable key={i + 'd'} ref={refs.current[i]} {...s} />)}
-        </div>
+        {sentences.length > 0 ? <Droppable ref={refs} text={sentences[0].text} />: <CompletedGame/>}
 
         <style jsx>{`
             .touchField {
@@ -61,7 +58,6 @@ const GameField: FunctionComponent<any> = ({ words, setWords, sentences, setSent
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                background: green;
                 user-select: none;
             }`}</style>
     </div>;

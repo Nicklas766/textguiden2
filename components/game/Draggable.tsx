@@ -3,18 +3,26 @@ import { useState, FunctionComponent } from 'react';
 // I assume it's not going to be more than 10 atm..
 const calculateStartingStyle = (index: number) => {
     const style = {
-        width: '100px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '33%',
         touchAction: 'none',
-        height: '75px',
-        background: 'white',
+        height: '50px',
+        background: '#2F4858',
+        color: 'white',
         borderRadius: '2em',
         zIndex: 0
     };
 
-    if (index < 5) {
-        return { ...style, left: index * 20 + '%', top: '0px' };
+    if (index < 3) {
+        return { ...style, left: index * 33 + '%', top: '0px' };
     }
-    return { ...style, left: (index - 5) * 20 + '%', top: '50px' };
+
+    if (index < 6) {
+        return { ...style, left: (index - 3) * 33 + '%', top: '100px' };
+    }
+    return { ...style, left: (index - 6) * 33 + '%', top: '200px' };
 }
 
 const Draggable: FunctionComponent<{ index: number, text: string }> = ({ index, text }) => {
@@ -32,18 +40,18 @@ const Draggable: FunctionComponent<{ index: number, text: string }> = ({ index, 
             if (e.type === 'touchmove') {
                 let touchLocation = e.targetTouches[0];
                 left = (touchLocation.pageX - e.target.parentNode.offsetLeft) - 50 + 'px';
-                top = (touchLocation.pageY - e.target.parentNode.offsetTop) - 35 + 'px';
+                top = (touchLocation.pageY - e.target.parentNode.offsetTop) - 25 + 'px';
             }
             else {
                 left = (e.pageX - e.target.parentNode.offsetLeft) - 50 + 'px';
-                top = (e.pageY - e.target.parentNode.offsetTop) - 35 + 'px';
+                top = (e.pageY - e.target.parentNode.offsetTop) - 25 + 'px';
             }
             setStyle({ ...style, left, top });
         }
     }
 
     const handleActive = () => {
-        setStyle({ ...style, zIndex: 100, background: 'blue' })
+        setStyle({ ...style, zIndex: 100, background: '#007888' })
         setClicked(true)
     }
 

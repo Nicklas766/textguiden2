@@ -13,10 +13,6 @@ const GamePage: NextPage = () => {
 
         {/* <GameBoard/> */}
 
-        <p>Hur spelar man? Dra den till meningen, om du använder en stationär dator så behöver du dra sakta annars behöver du börja om</p>
-
-        <p>Just nu så går det endast att öva på substantiv.</p>
-
         <Game />
 
 
