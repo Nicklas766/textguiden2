@@ -25,7 +25,7 @@ const Abbreviation: NextPage<Props> = ({ error, data }) => {
 
       <TextWrapper>
         <h1>Vad är förkortningen för "{data.word}"?</h1>
-        <p> Den korrekta förkortningen för "<b>{data.word}</b>" är <b>{data.abbreviation}</b></p>
+        <p>Den korrekta förkortningen för "<b>{data.word}</b>" är <b>{data.abbreviation}</b>.</p>
 
         <h2>Vad betyder <b>{data.abbreviation}</b>?</h2>
         <p><b>{data.abbreviation}</b> betyder <b>{data.word}</b> eftersom det är ordets förkortning.</p>

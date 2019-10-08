@@ -26,7 +26,7 @@ const WordInfo: NextPage<Props> = ({ error, data }) => {
   }
 
   return (
-    <Layout title={`${data.word} - hur används ${data.word}?`} description={`${data.word} är ...`}>
+    <Layout title={`Hur används ordet "${data.word}"?`} description={`${data.word} är ett ord. Men hur används det? Här får du information angående hur du använder ${data.word}.`}>
       <TextWrapper>
 
         <h1>{data.word}</h1>

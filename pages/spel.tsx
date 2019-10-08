@@ -6,7 +6,7 @@ import TextWrapper from '../components/TextWrapper';
 
 const GamePage: NextPage = () => {
 
-    return <Layout title='Öva på svenska med ett spel' description='Vårt spel'>
+    return <Layout title='Öva på svenska spel' description='Vårt spel'>
         <h1>Öva på svenska</h1>
         <AcceptTerms/>
 

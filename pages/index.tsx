@@ -48,7 +48,7 @@ const iconStyle = {
     margin: '5% auto'
 }
 const Home: NextPage = () => (
-    <Layout title='TextGuiden' description='En svensk ordbok'>
+    <Layout title='TextGuiden - En svensk ordbok' description='Vi vill hjälpa dig att skriva fina texter. Detta gör vi genom att erbjuda dig en ordbok och ett spel som lär dig att bemästra det svenska språket.'>
 
         <FeaturedLink
             href='/spel'

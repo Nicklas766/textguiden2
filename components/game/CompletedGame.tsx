@@ -1,4 +1,5 @@
 import { FunctionComponent, useState } from 'react';
+import TextWrapper from '../TextWrapper';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
@@ -6,7 +7,7 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 const CompletedGame: FunctionComponent = () => {
     const [text, setText] = useState('Vad tyckte du?');
 
-    return <div>
+    return <TextWrapper>
         <h1>Du klarade spelet!</h1>
         <p>Vi jobbar på att förbättra semantiken och lägga in andra ordklasser.</p>
 
@@ -28,7 +29,7 @@ const CompletedGame: FunctionComponent = () => {
                 width: 100%;
             }
             `}</style>
-    </div>
+    </TextWrapper>
 }
 
 export default CompletedGame;

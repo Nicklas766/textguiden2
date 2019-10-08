@@ -7,12 +7,13 @@ const SearchBar = dynamic(() => import('../../components/SearchBar'));
 
 
 const WordSearch: NextPage = () => (
-    <Layout title='Sök ord' description='här kan du söka bland våra ord'>
+    <Layout title='TextGuidens ordbok' description='På denna sida så erbjuder vi en ordbok. Ordboken ger dig information om hur du kan använda ord så du kan skriva fina texter.'>
         <TextWrapper>
-            <h1>Information om ord</h1>
+            <h1>Hitta ordklasser, namn, synonymer och former.</h1>
             <p>
-                Här kan du slå upp ord som du använt i vårt spel ifall du vill ha mer information.
-                Du hittar information om ordklasser, former och specifika saker om ordet.
+                Hej och välkommen till vår hemsida! Kul att du besöker oss. I dagsläget så jobbar vi med vårt <Link href='/spel'><a>språkverktyg</a></Link>.
+                Men under tiden så erbjuder vi en ordbok, helt gratis, som ger dig information angående hur du använder svenska ord. Detta betyder att du kan 
+                söka efter ord som du använt i vårt spel ifall du vill ha mer information om dem. Du hittar information om ordklasser, former och specifik information om ordet.
             </p>
             <SearchBar />
         </TextWrapper>
