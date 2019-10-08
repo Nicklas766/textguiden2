@@ -13,7 +13,8 @@ const calculateStartingStyle = (index: number) => {
         color: 'white',
         borderRadius: '2em',
         zIndex: 0,
-        boxShadow: ''
+        boxShadow: '',
+        transition: '0.5s'
     };
 
     if (index < 3) {
@@ -52,7 +53,7 @@ const Draggable: FunctionComponent<{ index: number, text: string }> = ({ index, 
     }
 
     const handleActive = () => {
-        setStyle({ ...style, zIndex: 100, background: '#007888', boxShadow: 'black 1px 1px 5px 1px' })
+        setStyle({ ...style, zIndex: 100, background: '#007888', boxShadow: 'black 1px 1px 5px 1px', transition: '0s' })
         setClicked(true)
     }
 

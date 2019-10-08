@@ -41,7 +41,7 @@ const GameField: FunctionComponent<any> = ({ words, setWords, sentences, setSent
 
     return <div className='touchField' onTouchEnd={(event) => handleTouchEnd(event)} onMouseUp={(e) => handleTouchEnd(e)}>
 
-        {words.map((w: WordObject, i: number) => <Draggable key={i} index={i} text={w.word} />)}
+        {words.map((w: WordObject, i: number) => <Draggable key={w.word + i} index={i} text={w.word} />)}
         
         {sentences.length > 0 ? <Droppable ref={refs} text={sentences[0].text} /> : <CompletedGame />}
 
