@@ -1,3 +1,14 @@
+require('dotenv').config()
+const webpack = require('webpack')
+
 module.exports = {
-    experimental: { publicDirectory: true },
+  webpack: (config) => {
+    config.plugins.push(
+      new webpack.EnvironmentPlugin(process.env)
+    )
+
+    return config
+  },
+
+  experimental: { publicDirectory: true },
 }

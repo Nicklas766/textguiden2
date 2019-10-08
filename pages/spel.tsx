@@ -24,9 +24,6 @@ const GamePage: NextPage = () => {
             h1 {
                 text-align: center;
             }
-
-
-
             `}</style>
     </Layout>
 };

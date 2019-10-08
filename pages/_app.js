@@ -1,5 +1,7 @@
 import App from 'next/app'
 import TimedBanner from '../components/TimedBanner';
+import Router from "next/router";
+import withGA from "next-ga";
 import Link from 'next/link';
 
 class MyApp extends App {
@@ -26,4 +28,4 @@ class MyApp extends App {
   }
 }
 
-export default MyApp
+export default withGA(process.env.GA, Router)(MyApp);

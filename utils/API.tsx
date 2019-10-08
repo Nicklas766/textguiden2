@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-unfetch';
 import { ServerResponse } from 'http'
-const URL = 'http://localhost:3001';
+const URL = process.env.API_URL;
 
 const API = {
 
