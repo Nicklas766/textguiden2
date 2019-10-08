@@ -10,7 +10,7 @@ class MyApp extends App {
     const { Component, pageProps } = this.props
     return <>
 
-      <TimedBanner buttonText='Jag förstår' timer={3000}>
+      <TimedBanner buttonText='Jag förstår' timer={5000}>
         <p>TextGuiden använder cookies för att förbättra din upplevelse, <Link href='/datahantering'><a>läs mer här</a></Link>.</p>
       </TimedBanner>
 

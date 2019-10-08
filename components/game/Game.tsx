@@ -36,7 +36,7 @@ const Game: FunctionComponent = () => {
             <GameField {...{ words, setWords, sentences, setSentences }} />
             </div>
     }
-    return <p> loading</p>
+    return <p>Laddar spelet...</p>
 }
 
 export default Game;
