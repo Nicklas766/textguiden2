@@ -27,21 +27,14 @@ const GameField: FunctionComponent<any> = ({ words, setWords, sentences, setSent
     const handleTouchEnd = (event: any) => {
         if (event.target.hasAttribute('data-index')) {
             const wordIndex: number = Number(event.target.getAttribute('data-index'));
-            const wordObj: WordObject = words[wordIndex];
 
-            const collidedSentence = sentences.find((s: SentenceObject, i: number) => isCollided(event.target, refs.current) && wordObj.tags.includes(s.tag));
-            const indexOfCollidedSentence = sentences.indexOf(collidedSentence);
-
-            if (indexOfCollidedSentence > -1) {
+            if (isCollided(event.target, refs.current) && words[wordIndex].tags.includes(sentences[0].tag)) {
                 setWords([
                     ...words.slice(0, wordIndex),
                     ...words.slice(wordIndex + 1)
                 ])
 
-                setSentences([
-                    ...sentences.slice(0, indexOfCollidedSentence),
-                    ...sentences.slice(indexOfCollidedSentence + 1)
-                ])
+                setSentences(sentences.slice(1))
             }
         }
     }

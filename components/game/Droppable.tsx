@@ -17,8 +17,8 @@ const Droppable = forwardRef((props: { text: string }, ref: any) => {
                 height: 100px;
                 width: 100%;
                 border-radius: 2em;
-                margin-top: 350px;
-                font-size: 2em;
+                margin-top: 300px;
+                font-size: 1.5em;
                 display: flex;
                 flex-wrap: wrap;
                 align-items: center;
