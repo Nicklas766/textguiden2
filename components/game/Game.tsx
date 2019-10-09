@@ -4,6 +4,15 @@ import GameField from './GameField';
 import API from '../../utils/API';
 import Button from '@material-ui/core/Button';
 
+// O(n) shuffle algorithm "Fisher–Yates shuffle"
+function shuffleArray(array: []) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 const Game: FunctionComponent = () => {
     const [loaded, setLoaded] = useState<Boolean>(false);
     const [words, setWords] = useState<WordObject[]>([]);
@@ -14,8 +23,7 @@ const Game: FunctionComponent = () => {
     const updateStateData = () => {
         API.getData('/game')
             .then(res => {
-                const lightlyShuffledArray = res.data.words.sort((obj: WordObject, obj2: WordObject) => obj.word.length < obj2.word.length);
-                setWords(lightlyShuffledArray);
+                setWords(shuffleArray(res.data.words));
                 setSentences(res.data.sentences);
                 setLoaded(true);
 

@@ -12,18 +12,13 @@ class MyApp extends App {
 
       <TimedBanner timer={0}>
         <p>TextGuiden använder cookies för att förbättra din upplevelse, <Link href='/datahantering'><a>läs mer här</a></Link>.</p>
+        <style jsx>{`
+              p { color: white; }
+              a { color: yellow; }
+      `}</style>
       </TimedBanner>
 
       <Component {...pageProps} />
-
-      <style jsx>{`
-                p {
-                  color: white;
-                }
-                a {
-                  color: yellow;
-                }
-      `}</style>
     </>
   }
 }
