@@ -39,7 +39,7 @@ const WordInfo: NextPage<Props> = ({ error, data }) => {
           </ul>
         </ConditionalShowDiv>
 
-        <ConditionalShowDiv visible={data.forms.length > 1}>
+        <ConditionalShowDiv visible={data.forms.length > 0}>
           <h2>Hur böjs <i>{data.word}</i>?</h2>
           <ul>
             {data.forms.map(form =>
@@ -51,7 +51,7 @@ const WordInfo: NextPage<Props> = ({ error, data }) => {
           </ul>
         </ConditionalShowDiv>
 
-        <ConditionalShowDiv visible={data.synonyms.length > 1}>
+        <ConditionalShowDiv visible={data.synonyms.length > 0}>
           <h2>Synonymer till <i>{data.word}</i></h2>
           <ul>
             {data.synonyms.map(syn =>

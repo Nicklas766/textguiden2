@@ -10,7 +10,7 @@ class MyApp extends App {
     const { Component, pageProps } = this.props
     return <>
 
-      <TimedBanner timer={0}>
+      <TimedBanner timer={3000}>
         <p>TextGuiden använder cookies för att förbättra din upplevelse, <Link href='/datahantering'><a>läs mer här</a></Link>.</p>
         <style jsx>{`
               p { color: white; }

@@ -20,7 +20,6 @@ const About: NextPage = () => (
                 inhämtade från en källa som inte får anges eftersom datan har bearbetats. Datan uppdateras ständigt och därav kan enstaka fel förekomma.
             </p>
 
-
             <p><Link href='/datahantering'><a>Klicka här för att läsa om vår datahantering</a></Link>.</p>
 
             <style jsx>{`
