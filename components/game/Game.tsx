@@ -1,6 +1,7 @@
 import { useState, useEffect, FunctionComponent } from 'react';
 import { WordObject, SentenceObject, GameData } from './Shared'
 import GameField from './GameField';
+import CompletedGame from './CompletedGame'
 import API from '../../utils/API';
 import Button from '@material-ui/core/Button';
 
@@ -43,10 +44,16 @@ const Game: FunctionComponent = () => {
             >
                 Nytt spel
             </Button>
-            {words.length > 0 && <h2>Vald ordklass: <i>{partsOfSpeech}</i></h2>}
-            <GameField {...{ words, setWords, sentences, setSentences }} />
+
+            {sentences.length !== 0 ?
+                <>
+                    <h2>Vald ordklass: <i>{partsOfSpeech}</i></h2>
+                    <GameField {...{ words, setWords, sentences, setSentences }} />
+                </>
+                : <CompletedGame />}
         </div>
     }
+    
     return <p>Laddar spelet...</p>
 }
 

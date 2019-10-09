@@ -2,7 +2,6 @@ import { useState, useRef, FunctionComponent } from 'react';
 import { WordObject } from './Shared'
 import Draggable from './Draggable'
 import Droppable from './Droppable'
-import CompletedGame from './CompletedGame'
 
 const isCollided = (wElement: HTMLElement, sElement: HTMLElement | null) => {
 
@@ -43,7 +42,7 @@ const GameField: FunctionComponent<any> = ({ words, setWords, sentences, setSent
 
         {words.map((w: WordObject, i: number) => <Draggable key={w.word + i} index={i} text={w.word} />)}
 
-        {sentences.length > 0 ? <Droppable ref={refs} text={sentences[0].text} /> : <CompletedGame />}
+        {<Droppable ref={refs} text={sentences[0].text} />}
 
         <style jsx>{`
             .touchField {
