@@ -33,7 +33,7 @@ export default function AcceptTerms() {
                         Detta är en beta version och orden dyker upp automatiskt från
                         vår databas. Just nu så går det att öva på hur substantiv och adjektiv böjs, däremot
                         så behöver semantiken förbättras. Detta betyder att udda meningar kan förekomma.
-                        Om du ser något märkligt så får du gärna kontakta oss via textguiden@hotmail.com så får vi kika på det.
+                        Om du ser något märkligt så får du gärna kontakta oss via textguiden@outlook.com så får vi kika på det.
           </DialogContentText>
                 </DialogContent>
                 <DialogActions>
