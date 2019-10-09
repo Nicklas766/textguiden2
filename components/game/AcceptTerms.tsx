@@ -30,12 +30,10 @@ export default function AcceptTerms() {
                 <DialogTitle id="alert-dialog-title">{"Viktig information"}</DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
-                        Just nu så går det att öva på hur substantiv böjs, dock
-                        så är semantiken inte den bästa.
-
                         Detta är en beta version och orden dyker upp automatiskt från
-                        vår ord data, detta betyder att konstiga meningar kan förekomma, detta är inte
-                        med flit, kontakta gärna oss via textguiden@hotmail.com så får vi kika på det.
+                        vår databas. Just nu så går det att öva på hur substantiv böjs, dock
+                        så behöver semantiken förbättras. Detta betyder att udda meningar kan förekomma. 
+                        Om du ser något märkligt så får du gärna kontakta oss via textguiden@hotmail.com så får vi kika på det.
           </DialogContentText>
                 </DialogContent>
                 <DialogActions>
@@ -43,7 +41,7 @@ export default function AcceptTerms() {
                         Då vill jag inte
           </Button>
                     <Button onClick={handleAccept} color="primary" autoFocus>
-                        Okej, jag provar
+                        Okej jag provar
           </Button>
                 </DialogActions>
             </Dialog>

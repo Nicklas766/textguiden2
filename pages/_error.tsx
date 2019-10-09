@@ -47,9 +47,9 @@ const ErrorPage = ({ statusCode }: { statusCode: number }) => {
     </Layout>
   }
 
-  return <Layout title={`Fel på klientsidan`} description={`Fel på klientsidan`} shouldBeIndexed={false}>
+  return <Layout title={`Internt fel`} description={`Internt fel`} shouldBeIndexed={false}>
     <TextWrapper>
-      <h1>Fel på klientsidan</h1>
+      <h1>Internt fel</h1>
       <p>Gå tillbaka till <Link href={"/"}><a>{"huvudsidan"}</a></Link></p>
     </TextWrapper>
   </Layout>

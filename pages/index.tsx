@@ -47,6 +47,7 @@ const iconStyle = {
     fontSize: '10em',
     margin: '5% auto'
 }
+
 const Home: NextPage = () => (
     <Layout title='TextGuiden - En svensk ordbok' description='Vi vill hjälpa dig att skriva fina texter. Detta gör vi genom att erbjuda dig en ordbok och ett spel som lär dig att bemästra det svenska språket.'>
 
@@ -57,13 +58,13 @@ const Home: NextPage = () => (
 
             <SportsEsportsIcon style={iconStyle} />
         </FeaturedLink>
+
         <FeaturedLink
             href='/ord'
             text='Titta i vår ordbok'
             color='#245F73'>
 
             <SearchIcon style={iconStyle} />
-
         </FeaturedLink>
 
         <FeaturedLink
@@ -72,9 +73,7 @@ const Home: NextPage = () => (
             color='#007888'>
 
             <ShortTextIcon style={iconStyle} />
-
         </FeaturedLink>
-
 
         <FeaturedLink
             href='/om-oss'
@@ -82,16 +81,7 @@ const Home: NextPage = () => (
             color='#245F73'>
 
             <EmojiPeopleIcon style={iconStyle} />
-
         </FeaturedLink>
-
-
-        <style jsx>{`
-                .MuiSvgIcon-root {
-                    font-size: 12em;
-                    margin: auto;
-                }
-        `}</style>
     </Layout>
 );
 

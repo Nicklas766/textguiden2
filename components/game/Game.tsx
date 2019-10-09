@@ -14,9 +14,10 @@ const Game: FunctionComponent = () => {
     const updateStateData = () => {
         API.getData('/game')
             .then(res => {
-                setWords(res.data.words)
-                setSentences(res.data.sentences)
-                setLoaded(true)
+                const lightlyShuffledArray = res.data.words.sort((obj: WordObject, obj2: WordObject) => obj.word.length < obj2.word.length);
+                setWords(lightlyShuffledArray);
+                setSentences(res.data.sentences);
+                setLoaded(true);
 
             })
             .catch(err => console.log(err));
