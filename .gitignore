@@ -1,4 +1,5 @@
 .vscode
 .next
 .env
+env.txt
 node_modules
