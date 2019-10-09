@@ -9,6 +9,7 @@ export type SentenceObject = {
 }
 
 export type GameData = {
+    pos: string,
     words: WordObject[],
     sentences: SentenceObject[]
 }

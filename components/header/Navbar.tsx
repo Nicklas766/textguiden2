@@ -21,7 +21,7 @@ const Navbar: React.FunctionComponent<Props> = ({ visible }) => {
             </Link>
 
             <Link href='/ord'>
-                <a>Slå upp ord</a>
+                <a>Hitta ord</a>
             </Link>
 
             <style jsx>{`
@@ -49,7 +49,9 @@ const Navbar: React.FunctionComponent<Props> = ({ visible }) => {
                     font-weight: 700;
                     color: white;
                     height: 40px;
-                    display: block;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
             `}</style>
         </nav>

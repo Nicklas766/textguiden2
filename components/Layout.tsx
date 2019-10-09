@@ -25,7 +25,6 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description, 
             {children}
         </div>
 
-
         <style jsx>{`
         /* montserrat-regular - latin */
         @font-face {
@@ -78,11 +77,18 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description, 
             }
         }
     `}</style>
-
         <style jsx global>{`
+
+        .touchField {
+            font-size: 1em;
+        }
+
         @media (max-width: 1000px) {
             header a h1 {
                 display: none;
+            }
+            .touchField {
+                font-size: 0.8em;
             }
         }
             

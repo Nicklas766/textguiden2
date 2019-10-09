@@ -1,6 +1,6 @@
 import { useState, FunctionComponent } from 'react';
 
-// I assume it's not going to be more than 10 atm..
+// I assume it's not going to be more than 12 atm..
 const calculateStartingStyle = (index: number) => {
     const style = {
         display: 'flex',
@@ -17,14 +17,10 @@ const calculateStartingStyle = (index: number) => {
         transition: '0.5s'
     };
 
-    if (index < 3) {
-        return { ...style, left: index * 33 + '%', top: '0px' };
-    }
+    const rowPlacement = (index % 3);
+    const topMargin = index < 3 ? 0 : index < 6 ? 100 : index < 9 ? 200 : 300;
 
-    if (index < 6) {
-        return { ...style, left: (index - 3) * 33 + '%', top: '100px' };
-    }
-    return { ...style, left: (index - 6) * 33 + '%', top: '200px' };
+    return { ...style, left: rowPlacement * 33 + '%', top: topMargin + 'px' };
 }
 
 const Draggable: FunctionComponent<{ index: number, text: string }> = ({ index, text }) => {

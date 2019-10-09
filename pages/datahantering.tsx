@@ -22,7 +22,7 @@ const Policy: NextPage = () => (
             </p>
 
             <h3>2. Kontakt</h3>
-            <p>Vid frågor om detta så går det att nå oss via: textguiden@hotmail.com.</p>
+            <p>Vid frågor om detta så går det att nå oss via: textguiden@outlook.com.</p>
 
             <style jsx>{`
                 h1 {

@@ -15,6 +15,7 @@ function shuffleArray(array: []) {
 
 const Game: FunctionComponent = () => {
     const [loaded, setLoaded] = useState<Boolean>(false);
+    const [partsOfSpeech, setPartsOfSpeech] = useState('');
     const [words, setWords] = useState<WordObject[]>([]);
     const [sentences, setSentences] = useState<SentenceObject[]>([]);
 
@@ -23,6 +24,7 @@ const Game: FunctionComponent = () => {
     const updateStateData = () => {
         API.getData('/game')
             .then(res => {
+                setPartsOfSpeech(res.data.pos);
                 setWords(shuffleArray(res.data.words));
                 setSentences(res.data.sentences);
                 setLoaded(true);
@@ -41,7 +43,7 @@ const Game: FunctionComponent = () => {
             >
                 Nytt spel
             </Button>
-
+            {words.length > 0 && <h2>Vald ordklass: <i>{partsOfSpeech}</i></h2>}
             <GameField {...{ words, setWords, sentences, setSentences }} />
         </div>
     }
