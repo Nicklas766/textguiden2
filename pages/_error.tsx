@@ -55,8 +55,9 @@ const ErrorPage = ({ statusCode }: { statusCode: number }) => {
   </Layout>
 }
 
-ErrorPage.getInitialProps = ({ res, err }: NextPageContext) => {
+ErrorPage.getInitialProps = ({ res, err, req }: NextPageContext) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404
+
   return { statusCode }
 }
 
