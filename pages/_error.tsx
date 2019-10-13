@@ -56,7 +56,17 @@ const ErrorPage = ({ statusCode }: { statusCode: number }) => {
 }
 
 ErrorPage.getInitialProps = ({ res, err, req }: NextPageContext) => {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : 404
+  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
+
+  if (req && res && req.url) {
+    let urlParts = req.url.split('?')
+    if (urlParts[0].endsWith('/')) {
+        urlParts[0] = urlParts[0].substring(0, urlParts[0].length - 1)
+        res.writeHead(301, { Location: urlParts.join('?') })
+        res.end()
+    }
+  }
+
 
   return { statusCode }
 }

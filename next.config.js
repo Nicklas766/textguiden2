@@ -9,6 +9,5 @@ module.exports = {
 
     return config
   },
-
-  experimental: { publicDirectory: true },
+  experimental: { publicDirectory: true }
 }
