@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import TimedBanner from './TimedBanner';
 
 type Props = {
     setVisible: (x: boolean) => void
