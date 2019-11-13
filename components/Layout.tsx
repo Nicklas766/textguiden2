@@ -20,7 +20,6 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description, 
         </Head>
 
         <Header />
-
         <div className='content-wrapper'>
             {children}
         </div>
