@@ -3,7 +3,6 @@ import TimedBanner from '../components/banner/TimedBanner';
 import AcceptTimedBanner from '../components/banner/AcceptTimedBanner';
 import AdBannerContent from '../components/banner/AdBannerContent';
 import Router from "next/router";
-import withGA from "next-ga";
 import Link from 'next/link';
 
 class MyApp extends App {
@@ -19,4 +18,4 @@ class MyApp extends App {
   }
 }
 
-export default withGA(process.env.GA, Router)(MyApp);
+export default MyApp;

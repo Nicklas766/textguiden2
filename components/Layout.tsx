@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import Header from './header/Header'
+import { initGA, logPageView } from '../utils/Analytics';
+import { useEffect } from 'react';
 
 type Props = {
     title: string,
@@ -7,8 +9,22 @@ type Props = {
     shouldBeIndexed?: boolean
 }
 
-const Layout: React.FunctionComponent<Props> = ({ children, title, description, shouldBeIndexed = true }) => (
-    <div className='site-wrapper'>
+// this ensures we can use property GA_INITIALIZED on window
+declare global {
+    interface Window { GA_INITIALIZED: boolean; }
+}
+
+const Layout: React.FunctionComponent<Props> = ({ children, title, description, shouldBeIndexed = true }) => {
+
+    useEffect(() => {
+        if (!window.GA_INITIALIZED) {
+            initGA(process.env.GA);
+            window.GA_INITIALIZED = true;
+        }
+        logPageView();
+    }, [])
+
+    return <div className='site-wrapper'>
         <Head>
             <title>{title}</title>
             <meta name='description' content={description} />
@@ -122,6 +138,6 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description, 
         }
       `}</style>
     </div>
-)
+}
 
 export default Layout;

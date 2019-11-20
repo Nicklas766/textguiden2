@@ -35,7 +35,6 @@ export const WordErrorPage: NextPage<{ statusCode: number, word: string }> = ({ 
   </Layout>
 }
 
-
 const ErrorPage = ({ statusCode }: { statusCode: number }) => {
 
   if (statusCode) {
@@ -61,9 +60,9 @@ ErrorPage.getInitialProps = ({ res, err, req }: NextPageContext) => {
   if (req && res && req.url) {
     let urlParts = req.url.split('?')
     if (urlParts[0].endsWith('/')) {
-        urlParts[0] = urlParts[0].substring(0, urlParts[0].length - 1)
-        res.writeHead(301, { Location: urlParts.join('?') })
-        res.end()
+      urlParts[0] = urlParts[0].substring(0, urlParts[0].length - 1)
+      res.writeHead(301, { Location: urlParts.join('?') })
+      res.end()
     }
   }
 

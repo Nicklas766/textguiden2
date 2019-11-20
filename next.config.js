@@ -7,7 +7,7 @@ module.exports = {
       new webpack.EnvironmentPlugin(process.env)
     )
 
-    return config
+    return config;
   },
   experimental: { publicDirectory: true }
 }
