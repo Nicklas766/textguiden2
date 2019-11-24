@@ -22,7 +22,7 @@ export const WordErrorPage: NextPage<{ statusCode: number, word: string }> = ({ 
       .catch(err => console.log(err))
   }, []);
 
-  return <Layout title={`Kunde inte hitta ${statusCode}!`} description="Hittade inte ett sökresultat" shouldBeIndexed={false}>
+  return <Layout title={`Kunde inte hitta "${word}"!`} description="Hittade inte ett sökresultat" shouldBeIndexed={false}>
     <TextWrapper>
       <h1>Vi hittade inte "{word}" :(</h1>
       <p>Det går att söka igen genom att gå tillbaka till <Link href={"/ord"}><a>{"sök"}</a></Link>.</p>
