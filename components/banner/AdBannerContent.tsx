@@ -53,7 +53,7 @@ const AdBannerContent: React.FunctionComponent<Props> = ({ setVisible }) => {
             <img src={adDetails.image} width={adDetails.width} height={adDetails.height} />
         </a>
 
-        <span>Reklam genom annonslänkar för Vimla</span>
+        <span>Reklam genom annonslänkar för Stayhard</span>
         <p>Erbjudandet försvinner inom <b>{COUNTMAX - count} sekund{(COUNTMAX - count) > 1 && 'er'}</b>.</p>
 
         <style jsx>{`
