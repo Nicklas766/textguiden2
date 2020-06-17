@@ -4,8 +4,23 @@ type Props = {
     setVisible: (x: boolean) => void
 }
 
+const DESKTOP_AD = {
+    link: 'https://track.adtraction.com/t/t?a=1088653514&as=1415950438&t=2&tk=1',
+    image: 'https://track.adtraction.com/t/t?a=1088653514&as=1415950438&t=1&tk=1&i=1',
+    width: '980',
+    height: '120'
+}
+
+const MOBILE_AD = {
+    link: 'https://track.adtraction.com/t/t?a=1088653485&as=1415950438&t=2&tk=1',
+    image: 'https://track.adtraction.com/t/t?a=1088653485&as=1415950438&t=1&tk=1&i=1',
+    width: '250',
+    height: '240'
+}
+
 const AdBannerContent: React.FunctionComponent<Props> = ({ setVisible }) => {
     const COUNTMAX = 10;
+    const [adDetails, setAdDetails] = useState(DESKTOP_AD);
     const [count, setCount] = useState(0);
     const [hasMounted, setHasMounted] = useState(false);
 
@@ -13,7 +28,7 @@ const AdBannerContent: React.FunctionComponent<Props> = ({ setVisible }) => {
         setHasMounted(true);
 
         if ((window.innerWidth > 980) === false) {
-            setVisible(false);
+            setAdDetails(MOBILE_AD);
         }
     }, []);
 
@@ -34,8 +49,8 @@ const AdBannerContent: React.FunctionComponent<Props> = ({ setVisible }) => {
 
     return <>
 
-        <a href="https://track.adtraction.com/t/t?a=1082200808&as=1415950438&t=2&tk=1" target="_blank" >
-            <img src="https://track.adtraction.com/t/t?a=1082200808&as=1415950438&t=1&tk=1&i=1" width="980" height="120" />
+        <a href={adDetails.link} target="_blank" >
+            <img src={adDetails.image} width={adDetails.width} height={adDetails.height} />
         </a>
 
         <span>Reklam genom annonslänkar för Vimla</span>
