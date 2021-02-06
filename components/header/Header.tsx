@@ -10,8 +10,7 @@ const Layout: React.FunctionComponent = () => {
         <header>
             <Link href='/'>
                 <a className='centered-content logo'>
-                    <img alt='textguiden logo' src='/static/favicon.png' />
-                    <h1>extGuiden</h1>
+                    <h1>TextGuiden.se</h1>
                 </a>
             </Link>
 
